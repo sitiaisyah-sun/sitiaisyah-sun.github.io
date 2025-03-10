@@ -8,66 +8,81 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #004d00; /* Dark green background */
-            color: #fff; /* White text color for all text */
+            color: #fff; /* White text color */
             margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure the body takes full height */
+        }
+        header {
+            background-color: #003300; /* Darker green for header */
             padding: 20px;
+            text-align: center;
         }
         h1 {
-            text-align: center; /* Center align the main heading */
+            margin: 0;
             color: #aaffaa; /* Soft green color for the heading */
         }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            color: #aaffaa; /* Soft green color for links */
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+        main {
+            flex: 1; /* Allow main to grow and fill available space */
+            padding: 20px;
+            max-width: 800px; /* Limit the width for better readability */
+            margin: 0 auto; /* Center the main content */
+        }
         h2 {
-            color: #aaffaa; /* Soft green color for the subheading */
+            color: #aaffaa; /* Soft green color for subheading */
         }
         p {
             color: #fff; /* White text color for paragraphs */
             line-height: 1.6; /* Improve readability */
+            margin-bottom: 15px; /* Space between paragraphs */
         }
-        a {
-            display: block; /* Make links block elements for better spacing */
-            margin: 10px 0; /* Add some margin for spacing */
-            color: #aaffaa; /* Soft green color for links */
-            text-decoration: none; /* Remove underline from links */
-        }
-        a:hover {
-            text-decoration: underline; /* Underline on hover for better UX */
-        }
-        h4 {
-            color: #fff; /* White color for subheading */
-        }
-        ul {
-            list-style-type: none; /* Remove bullet points */
-            padding: 0; /* Remove padding */
-        }
-        li {
-            margin: 5px 0; /* Add some margin between list items */
+        footer {
+            background-color: #003300; /* Darker green for footer */
+            text-align: center;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>About Perpustakaan Aisyah</h1>
-    <h2>Hai, Selamat Datang</h2>
-    <p>
-        Perkenalkan nama saya <i>Siti Aisyah</i>, ini adalah perpustakaan pribadi saya yang isinya koleksi-koleksi yang saya sukai dan beberapa tugas yang akan saya input ke <i>homepage</i>.
-    </p>
-    <p>
-        Perpustakaan ini berisi berbagai jenis buku, mulai dari fiksi, non-fiksi, hingga buku akademik yang dapat membantu dalam proses belajar. Saya juga menyimpan koleksi artikel dan jurnal yang relevan dengan berbagai topik. 
-    </p>
-    <p>
-        Selain itu, saya berencana untuk menambahkan fitur-fitur seperti rekomendasi buku, ulasan, dan informasi tentang acara literasi yang akan datang. Harapan saya, perpustakaan ini dapat menjadi sumber inspirasi dan pengetahuan bagi siapa saja yang mengunjunginya.
-    </p>
-    <p>
-        Jangan ragu untuk menjelajahi koleksi saya dan menemukan buku-buku yang mungkin menarik bagi Anda. Jika Anda memiliki pertanyaan atau ingin berbagi rekomendasi, silakan hubungi saya melalui halaman kontak.
-    </p>
-    <a href="https://lib.ui.ac.id/" target="_blank">Perpustakaan UI</a>
-    <h4>Halaman lain</h4>
-    <ul>
-        <li>
+    <header>
+        <h1>Perpustakaan Aisyah</h1>
+        <nav>
             <a href="about.html">About Me</a>
-        </li>
-        <li>
-            <a href="contact.html">Hubungi saya</a>
-        </li>
-    </ul>
+            <a href="contact.html">Hubungi Saya</a>
+            <a href="https://lib.ui.ac.id/" target="_blank">Perpustakaan UI</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Hai, Selamat Datang</h2>
+        <p>
+            Perkenalkan nama saya <i>Siti Aisyah</i>, ini adalah perpustakaan pribadi saya yang isinya koleksi-koleksi yang saya sukai dan beberapa tugas yang akan saya input ke <i>homepage</i>.
+        </p>
+        <p>
+            Perpustakaan ini berisi berbagai jenis buku, mulai dari fiksi, non-fiksi, hingga buku akademik yang dapat membantu dalam proses belajar. Saya juga menyimpan koleksi artikel dan jurnal yang relevan dengan berbagai topik.
+        </p>
+        <p>
+            Selain itu, saya berencana untuk menambahkan fitur-fitur seperti rekomendasi buku, ulasan, dan informasi tentang acara literasi yang akan datang. Harapan saya, perpustakaan ini dapat menjadi sumber inspirasi dan pengetahuan bagi siapa saja yang mengunjunginya.
+        </p>
+        <p>
+            Jangan ragu untuk menjelajahi koleksi saya dan menemukan buku-buku yang mungkin menarik bagi Anda. Jika Anda memiliki pertanyaan atau ingin berbagi rekomendasi, silakan hubungi saya melalui halaman kontak.
+        </p>
+    </main>
+    <footer>
+        <p>&copy; 2023 Perpustakaan Aisyah. All rights reserved.</p>
+    </footer>
 </body>
 </html>
