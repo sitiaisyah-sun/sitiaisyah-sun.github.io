@@ -62,7 +62,7 @@ body.about-me main {
             color: #aaffaa; /* Soft green color for subheading */
         }
         p {
-            color: #fff; /* White text color for paragraphs */
+            color: #000000; /* Black text color for paragraphs */
             line-height: 1.6; /* Improve readability */
             margin-bottom: 15px; /* Space between paragraphs */
             text-align: justify; /* Justify text alignment */
