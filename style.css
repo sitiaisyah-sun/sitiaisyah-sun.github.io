@@ -133,10 +133,15 @@ th {
     color: #fff;
 }
 
+* {
+    box-sizing: border-box; /* Menjamin padding dan border dihitung dalam lebar dan tinggi */
+}
+
 header, footer {
     width: 100%;
-    background-color: darkgreen; /* Sesuaikan dengan warna yang kamu inginkan */
+    background-color: #003300; /* Warna latar belakang yang sama */
     color: white;
     text-align: center;
-    padding: 15px 0;
+    padding: 20px; /* Pastikan padding sama */
+    margin: 0; /* Pastikan tidak ada margin yang mempengaruhi ukuran */
 }
