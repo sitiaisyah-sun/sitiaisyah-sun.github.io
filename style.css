@@ -12,6 +12,17 @@ body {
             background-color: #003300; /* Darker green for header */
             padding: 20px;
             text-align: center;
+body.about-me header {
+    background-color: #003300; /* Warna latar belakang untuk header */
+}
+
+body.about-me footer {
+    background-color: #003300; /* Warna latar belakang untuk footer */
+}
+
+body.about-me main {
+    background-color: transparent; /* Pastikan konten utama tidak berwarna */
+}
         }
         h1 {
             margin: 0;
