@@ -132,10 +132,13 @@ th {
     background-color: #003300;
     color: #fff;
 }
-footer {
-    background-color: #003300; /* Sama dengan header */
-    text-align: center;
-    padding: 15px;
-    width: 100%; /* Lebar penuh */
-    position: relative;
-    bottom: 0;
+}
+        footer {
+            background-color: #003300; /* Darker green for footer */
+            text-align: center;
+            padding: 20px;
+        }
+        footer p {
+            margin: 0; /* Remove default margin for footer text */
+            font-size: 0.9em; /* Smaller font size for footer text */
+        }
