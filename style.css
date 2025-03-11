@@ -132,3 +132,10 @@ th {
     background-color: #003300;
     color: #fff;
 }
+footer {
+    background-color: #003300; /* Sama dengan header */
+    text-align: center;
+    padding: 15px;
+    width: 100%; /* Lebar penuh */
+    position: relative;
+    bottom: 0;
