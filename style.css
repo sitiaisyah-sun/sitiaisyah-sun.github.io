@@ -70,7 +70,7 @@ body.about-me main {
         footer {
             background-color: #003300; /* Darker green for footer */
             text-align: center;
-            padding: 10px;
+            padding: 20px;
         }
         footer p {
             margin: 0; /* Remove default margin for footer text */
