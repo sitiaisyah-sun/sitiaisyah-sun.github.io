@@ -77,22 +77,22 @@ body.about-me main {
             font-size: 0.9em; /* Smaller font size for footer text */
         }
 h1 {
-    text-align: center;
-    font-size: 2em; /* Sesuaikan ukuran */
+    text-align: center; /* Pusatkan teks */
+    font-size: 2em; /* Sesuaikan ukuran font */
 }
 
-/* Pusatkan tabel */
+/* Atur ukuran tabel dan pusatkan */
 table {
-    width: 60%; /* Sesuaikan ukuran tabel */
-    margin: 20px auto; /* Pusatkan tabel */
-    border-collapse: collapse;
+    width: 60%; /* Perkecil tabel */
+    margin: 20px auto; /* Buat tabel berada di tengah */
+    border-collapse: collapse; /* Gabungkan garis batas tabel */
 }
 
 /* Atur tampilan sel tabel */
 table, th, td {
-    border: 1px solid black;
-    padding: 10px;
-    text-align: left;
+    border: 1px solid black; /* Tambahkan garis batas */
+    padding: 10px; /* Beri ruang dalam sel */
+    text-align: left; /* Rata kiri untuk teks dalam tabel */
 }
 
 /* Pastikan teks dalam tabel tetap hitam */
@@ -100,30 +100,7 @@ th, td {
     color: #000000;
 }
 
-/* Pusatkan paragraf */
-p {
-    text-align: center; /* Buat paragraf berada di tengah */
-    max-width: 800px; /* Batasi lebar agar rapi */
-    margin: 0 auto; /* Pusatkan di tengah halaman */
-}
-
-/* Header tetap seperti di halaman utama */
-header {
-    background-color: #003300; /* Warna hijau gelap */
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Pastikan footer tetap konsisten */
-footer {
-    background-color: #003300;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-/* Pusatkan isi utama */
+/* Pusatkan bagian halaman utama */
 main {
-    text-align: center;
+    text-align: center; /* Pusatkan isi utama */
 }
