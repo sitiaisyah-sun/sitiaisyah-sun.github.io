@@ -104,3 +104,8 @@ th, td {
 main {
     text-align: center; /* Pusatkan isi utama */
 }
+body.about-me p {
+    text-align: center;
+    max-width: 800px; /* Batasi lebar agar lebih rapi */
+    margin: 0 auto;
+}
