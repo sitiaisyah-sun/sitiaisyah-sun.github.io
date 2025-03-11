@@ -133,12 +133,10 @@ th {
     color: #fff;
 }
 
-footer {
-    background-color: darkgreen;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    font-size: 14px;
+header, footer {
     width: 100%;
-    position: relative;
-    bottom: 0;
+    background-color: darkgreen; /* Sesuaikan dengan warna yang kamu inginkan */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
