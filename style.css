@@ -76,4 +76,32 @@ body.about-me main {
             margin: 0; /* Remove default margin for footer text */
             font-size: 0.9em; /* Smaller font size for footer text */
         }
+h1 {
+    text-align: center; /* Pusatkan teks */
+    font-size: 2em; /* Sesuaikan ukuran font */
+}
+
+/* Atur ukuran tabel dan pusatkan */
+table {
+    width: 60%; /* Perkecil tabel */
+    margin: 20px auto; /* Buat tabel berada di tengah */
+    border-collapse: collapse; /* Gabungkan garis batas tabel */
+}
+
+/* Atur tampilan sel tabel */
+table, th, td {
+    border: 1px solid black; /* Tambahkan garis batas */
+    padding: 10px; /* Beri ruang dalam sel */
+    text-align: left; /* Rata kiri untuk teks dalam tabel */
+}
+
+/* Pastikan teks dalam tabel tetap hitam */
+th, td {
+    color: #000000;
+}
+
+/* Pusatkan bagian halaman utama */
+main {
+    text-align: center; /* Pusatkan isi utama */
+}
   
