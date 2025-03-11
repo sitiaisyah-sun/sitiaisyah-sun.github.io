@@ -132,13 +132,13 @@ th {
     background-color: #003300;
     color: #fff;
 }
-}
-        footer {
-            background-color: #003300; /* Darker green for footer */
-            text-align: center;
-            padding: 20px;
-        }
-        footer p {
-            margin: 0; /* Remove default margin for footer text */
-            font-size: 0.9em; /* Smaller font size for footer text */
-        }
+
+footer {
+    background-color: darkgreen;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
