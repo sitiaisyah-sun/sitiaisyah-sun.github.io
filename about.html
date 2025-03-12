@@ -1,71 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>About Me</title>
-	 <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Saya - Perpustakaan Aisyah</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body class="about-page">
-	<header>
-        <h1>Perpustakaan Aisyah</h1>
-        <nav>
+    <header>
+        <h1 class="site-title">Perpustakaan Aisyah</h1>
+        <nav class="navbar">
             <ul>
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="about.html">Tentang Saya</a></li>
-                <li><a href="contact.html">Hubungi Kami</a></li>
+                <li><a href="index.html">🏠 Beranda</a></li>
+                <li><a href="about.html" class="active">📖 Tentang Saya</a></li>
+                <li><a href="contact.html">✉ Hubungi Saya</a></li>
             </ul>
         </nav>
     </header>
-
+    
     <main>
         <div class="content-box">
+            <h1><i class="fas fa-user"></i> Tentang Saya</h1>
+            <p>Halo! Saya seorang mahasiswa semester 6 di Universitas Sumatera Utara, yang sedang belajar dan mendalami ilmu perpustakaan serta sains informasi.</p>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>Informasi</th>
+                        <th>Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><i class="fas fa-id-badge"></i> Nama</td><td>Siti Aisyah</td></tr>
+                    <tr><td><i class="fas fa-graduation-cap"></i> NIM</td><td>220709065</td></tr>
+                    <tr><td><i class="fas fa-book"></i> Program Studi</td><td>Perpustakaan dan Sains Informasi</td></tr>
+                    <tr><td><i class="fas fa-university"></i> Fakultas</td><td>Ilmu Budaya</td></tr>
+                    <tr><td><i class="fas fa-school"></i> Universitas</td><td>Universitas Sumatera Utara</td></tr>
+                    <tr><td><i class="fas fa-map-marker-alt"></i> Asal</td><td>Aceh Tenggara</td></tr>
+                    <tr><td><i class="fas fa-pencil-alt"></i> Hobi</td><td>Menulis</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
 
-	<h1>About Me</h1>
-	<p>halaman ini berisi tentang profil saya yang sedang menjalani semester 6 di Universitas Sumatera Utara</p>
-    <table border="1" cellspacing="0" cellpadding="5">
-        <tr>
-            <!-- td = tabel data -->
-            <td><b>Nama</b></td>
-            <td>Siti Aisyah</td>
-        </tr>
-        <tr>
-            <td>NIM</td>
-            <td>220709065</td>
-        </tr>
-        <tr>
-            <td>Program Studi</td>
-            <td>Perpustakaan dan Sains Informasi</td>
-        </tr>
-        <tr>
-            <td>Fakultas</td>
-            <td>Ilmu Budaya</td>
-        </tr>
-        <tr>
-            <td>Universitas</td>
-            <td>Universitas Sumatera Utara</td>
-        </tr>
-        <tr>
-            <td>Asal</td>
-            <td>Aceh Tenggara</td>
-        </tr>
-        <tr>
-            <td>Hobi</td>
-            <td>Menulis</td>
-        </tr>
-
-    </table>
-        
-    <h4>Halaman lain</h4>
-    <ul>
-        <li>
-            <a href="index.html">Home</a>
-        </li>
-        <li>
-            <a href="contact.html">Hubungi saya</a>
-        </li>
-    </ul>
-	 <footer>
+    <footer>
         <p>&copy; 2025 Perpustakaan Aisyah. All rights reserved.</p>
     </footer>
 </body>

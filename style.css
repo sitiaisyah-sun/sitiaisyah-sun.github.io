@@ -1,147 +1,196 @@
+/* ======== RESET UMUM ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ======== BODY ======== */
 body {
-            font-family: Arial, sans-serif;
-            background-color: #FFFFFF; /* white background */
-            color: #000000; /* Black text color */
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Ensure the body takes full height */
-        }
-        header {
-            background-color: #003300; /* Darker green for header */
-            padding: 20px;
-            text-align: center;
-body.about-me header {
-    background-color: #003300; /* Warna latar belakang untuk header */
-}
-
-body.about-me footer {
-    background-color: #003300; /* Warna latar belakang untuk footer */
-}
-
-body.about-me main {
-    background-color: #FFFFFF; /* Pastikan konten utama tidak berwarna */
-}
-        }
-        h1 {
-            margin: 0;
-            color: #aaffaa; /* Soft green color for the heading */
-            font-family: 'Georgia', serif; /* Change font for aesthetics */
-            font-size: 2.5em; /* Increase font size for heading */
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
-        }
-        nav {
-            margin: 10px 0; /* Space above and below the nav */
-        }
-        nav ul {
-            list-style-type: none; /* Remove bullet points */
-            padding: 0; /* Remove padding */
-            text-align: center; /* Center align the navigation */
-        }
-        nav ul li {
-            display: inline; /* Display links in a row */
-            margin: 0 15px; /* Space between links */
-        }
-        nav a {
-            color: #aaffaa; /* Soft green color for links */
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.8em; /* Smaller font size */
-        }
-        nav a:hover {
-            text-decoration: underline; /* Underline on hover */
-        }
-        main {
-            flex: 1; /* Allow main to grow and fill available space */
-            padding: 20px;
-            max-width: 800px; /* Limit the width for better readability */
-            margin: 0 auto; /* Center the main content */
-        }
-        h2 {
-            color: #aaffaa; /* Soft green color for subheading */
-        }
-        p {
-            color: #000000; /* Black text color for paragraphs */
-            line-height: 1.6; /* Improve readability */
-            margin-bottom: 15px; /* Space between paragraphs */
-            text-align: justify; /* Justify text alignment */
-        }
-        footer {
-            background-color: #003300; /* Darker green for footer */
-            text-align: center;
-            padding: 20px;
-        }
-        footer p {
-            margin: 0; /* Remove default margin for footer text */
-            font-size: 0.9em; /* Smaller font size for footer text */
-        }
-h1 {
-    text-align: center; /* Pusatkan teks */
-    font-size: 2em; /* Sesuaikan ukuran font */
-}
-
-/* Atur ukuran tabel dan pusatkan */
-table {
-    width: 60%; /* Perkecil tabel */
-    margin: 20px auto; /* Buat tabel berada di tengah */
-    border-collapse: collapse; /* Gabungkan garis batas tabel */
-}
-
-/* Atur tampilan sel tabel */
-table, th, td {
-    border: 1px solid black; /* Tambahkan garis batas */
-    padding: 10px; /* Beri ruang dalam sel */
-    text-align: left; /* Rata kiri untuk teks dalam tabel */
-}
-
-/* Pastikan teks dalam tabel tetap hitam */
-th, td {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
     color: #000000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Pusatkan bagian halaman utama */
+header {
+    background-color: #003300;
+    color: #aaffaa;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Mengatur elemen dalam header agar vertikal */
+    align-items: center; /* Memastikan semua elemen tetap di tengah */
+}
+
+nav {
+    margin-top: 10px; /* Memberi jarak agar tidak menempel dengan judul */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #aaffaa;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #005500;
+    border-radius: 5px;
+}
+
+/* ======== MAIN CONTENT ======== */
 main {
-    text-align: center; /* Pusatkan isi utama */
+    flex-grow: 1;
+    padding: 20px;
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    min-height: 60vh; /* Menjaga konten tidak terlalu pendek */
 }
-body.about-me p {
-    text-align: center;
-    max-width: 800px; /* Batasi lebar agar lebih rapi */
-    margin: 0 auto;
-}
-.about-page .content-box p {
+
+/* ======== HALAMAN BERANDA ======== */
+.home-page .welcome-box {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-/* Gaya untuk tabel */
-table {
-    width: 60%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    background-color: #fff;
-    color: #000;
+.home-page h2 {
+    color: #003300;
 }
 
-th, td {
-    border: 1px solid #000;
+.home-page p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ======== FORM KONTAK ======== */
+.contact-page .form-container {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-page form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-page label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.contact-page input, 
+.contact-page textarea {
+    width: 100%;
     padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-page button {
+    background-color: #003300;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact-page button:hover {
+    background-color: #005500;
+}
+
+/* ======== HALAMAN ABOUT ======== */
+.about-page .content-box {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+.about-page p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ======== TABEL INFORMASI ======== */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.info-table th, .info-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
     text-align: left;
 }
 
-th {
+.info-table th {
     background-color: #003300;
-    color: #fff;
+    color: white;
 }
 
-* {
-    box-sizing: border-box; /* Menjamin padding dan border dihitung dalam lebar dan tinggi */
+.info-table td {
+    background-color: #f9f9f9;
 }
 
-header, footer {
-    width: 100%;
-    background-color: #003300; /* Warna latar belakang yang sama */
+/* ======== FOOTER ======== */
+footer {
+    background-color: #003300;
     color: white;
     text-align: center;
-    padding: 20px; /* Pastikan padding sama */
-    margin: 0; /* Pastikan tidak ada margin yang mempengaruhi ukuran */
+    padding: 20px;
+    height: 60px; /* Ukuran tetap */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* ======== RESPONSIVE DESIGN ======== */
+@media (max-width: 768px) {
+    main {
+        width: 95%;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .contact-page .form-container, 
+    .about-page .content-box, 
+    .home-page .welcome-box {
+        width: 90%;
+    }
 }
