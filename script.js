@@ -1,7 +1,7 @@
 function pesanSelamatDatang() {
-    console.log("Selamat datang di Perpustakaan Digital!");
+    console.log("Selamat datang di Perpustakaan Aisyah!");
 }
 
 function ubahJudul() {
-    document.querySelector("h1").innerHTML = "Judul Berubah!";
+    document.querySelector("h1").innerHTML = "Jangan Lupa Untuk Kembali Lagi!";
 }
