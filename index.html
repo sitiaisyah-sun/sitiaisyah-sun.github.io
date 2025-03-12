@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<script>
-        function pesanSelamatDatang() {
-            console.log("Selamat datang di Perpustakaan Aisyah!");
-        }
-    </script>
+        <script src="script.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Aisyah</title>
@@ -13,6 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body class="home-page">
+        <body onload="pesanSelamatDatang()">
+    <h1>Perpustakaan Digital</h1>
+    <button onclick="ubahJudul()">Klik untuk Ubah Judul</button>
     <header>
         <h1>Perpustakaan Aisyah</h1>
         <nav>
