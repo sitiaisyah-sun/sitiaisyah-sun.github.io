@@ -339,21 +339,13 @@ button:hover {
 }
 
 /* ======== DARK MODE ======== */
-/* Mode Terang (Default) */
-body {
-    background-color: white;
-    color: black;
-    transition: background 0.3s ease, color 0.3s ease;
+padding: 25px;
+  background-color: white;
+  color: black;
+  font-size: 25px;
 }
 
-/* Mode Gelap */
 .dark-mode {
-    background-color: #121212;
-    color: white;
+  background-color: black;
+  color: white;
 }
-
-.dark-mode button {
-    background-color: #333;
-    color: white;
-}
-
