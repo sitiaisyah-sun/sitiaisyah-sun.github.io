@@ -7,6 +7,17 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Gaya untuk dark mode */
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        /* Gaya untuk elemen lain dalam dark mode */
+        header.dark-mode, footer.dark-mode {
+            background-color: #1e1e1e;
+        }
+    </style>
 </head>
 <body class="home-page">
     <script>
@@ -77,15 +88,7 @@
 
 
     <script src="script.js"></script>
-    <button onclick="myFunction()">Toggle dark mode</button>
 
-<script>
-function myFunction() {
-   var element = document.body;
-   element.classList.toggle("dark-mode");
-}
-</script>
-</body>
         </div>
     </main>
 
@@ -93,5 +96,17 @@ function myFunction() {
         <p>&copy; 2025 Perpustakaan Aisyah. All rights reserved.</p>
 
     </footer>
+</main>
+
+    <script>
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+            var header = document.querySelector("header");
+            var footer = document.querySelector("footer");
+            header.classList.toggle("dark-mode");
+            footer.classList.toggle("dark-mode");
+        }
+    </script>
 </body>
 </html>
