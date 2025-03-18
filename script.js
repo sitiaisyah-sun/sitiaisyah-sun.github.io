@@ -219,21 +219,25 @@ function displayComments() {
     });
 }
 
-function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
+document.addEventListener("DOMContentLoaded", function () {
+    const darkModeToggle = document.getElementById("darkModeToggle");
+    const body = document.body;
 
-    // Simpan preferensi mode ke localStorage
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.setItem("theme", "light");
-    }
-}
-
-// Cek preferensi mode saat halaman dimuat
-window.onload = function () {
+    // Cek preferensi yang tersimpan
     if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
+        body.classList.add("dark-mode");
+        darkModeToggle.textContent = "☀️ Mode Terang";
     }
-};
 
+    darkModeToggle.addEventListener("click", function () {
+        body.classList.toggle("dark-mode");
+
+        if (body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+            darkModeToggle.textContent = "☀️ Mode Terang";
+        } else {
+            localStorage.setItem("theme", "light");
+            darkModeToggle.textContent = "🌙 Mode Gelap";
+        }
+    });
+});
