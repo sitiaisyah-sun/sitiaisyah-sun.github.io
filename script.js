@@ -30,3 +30,42 @@ async function getWeather() {
         document.getElementById('weather-result').innerHTML = `<p style="color: red;">${error.message}</p>`;
     }
 }
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    color: #333;
+}
+
+#search-input {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#book-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.book-item {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-item img {
+    width: 100px;
+    height: 150px;
+    border-radius: 5px;
+}
