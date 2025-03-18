@@ -190,3 +190,32 @@ function showDetail(title, image, description) {
 
 <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    // Menyimpan komentar dalam array
+let comments = [];
+
+// Fungsi menambahkan komentar
+function addComment() {
+    let commentInput = document.getElementById("comment-input");
+    let commentText = commentInput.value.trim();
+
+    if (commentText !== "") {
+        comments.push(commentText); // Tambah komentar ke array
+        commentInput.value = ""; // Kosongkan textarea
+        displayComments(); // Perbarui tampilan komentar
+    }
+}
+
+// Fungsi menampilkan komentar
+function displayComments() {
+    let commentList = document.getElementById("comment-list");
+    commentList.innerHTML = ""; // Bersihkan daftar komentar
+
+    comments.forEach(comment => {
+        let commentDiv = document.createElement("div");
+        commentDiv.classList.add("comment");
+        commentDiv.textContent = comment;
+        commentList.appendChild(commentDiv);
+    });
+}
+
