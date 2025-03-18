@@ -31,7 +31,16 @@
                 <li><a href="index.html" class="active">🏠 Beranda</a></li>
                 <li><a href="about.html">📖 Tentang Saya</a></li>
                 <li><a href="contact.html">✉ Hubungi Saya</a></li>
-                <script src="switch-mode.js"></script>
+                <script>
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+            var header = document.querySelector("header");
+            var footer = document.querySelector("footer");
+            header.classList.toggle("dark-mode");
+            footer.classList.toggle("dark-mode");
+        }
+    </script>
                 </nav>
     
   </header>   
