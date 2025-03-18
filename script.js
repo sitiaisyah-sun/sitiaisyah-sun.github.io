@@ -223,21 +223,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const darkModeToggle = document.getElementById("dark-mode-toggle");
     const body = document.body;
 
-    // Cek apakah sebelumnya dark mode aktif
-    if (localStorage.getItem("theme") === "dark") {
+    // Cek apakah sebelumnya pengguna sudah memilih dark mode
+    if (localStorage.getItem("dark-mode") === "enabled") {
         body.classList.add("dark-mode");
-        darkModeToggle.textContent = "Switch to Light Mode";
     }
 
     darkModeToggle.addEventListener("click", function () {
         body.classList.toggle("dark-mode");
 
+        // Simpan preferensi pengguna
         if (body.classList.contains("dark-mode")) {
-            localStorage.setItem("theme", "dark");
-            darkModeToggle.textContent = "Switch to Light Mode";
+            localStorage.setItem("dark-mode", "enabled");
         } else {
-            localStorage.setItem("theme", "light");
-            darkModeToggle.textContent = "Switch to Dark Mode";
+            localStorage.setItem("dark-mode", "disabled");
         }
     });
 });
