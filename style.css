@@ -339,13 +339,15 @@ button:hover {
 }
 
 /* ======== DARK MODE ======== */
-padding: 25px;
-  background-color: white;
-  color: black;
-  font-size: 25px;
+body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    text-align: center;
 }
 
 .dark-mode {
-  background-color: black;
-  color: white;
+    background-color: #121212;
+    color: white;
 }
+
