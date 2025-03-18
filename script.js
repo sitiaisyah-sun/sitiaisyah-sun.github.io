@@ -219,3 +219,21 @@ function displayComments() {
     });
 }
 
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    // Simpan preferensi mode ke localStorage
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
+}
+
+// Cek preferensi mode saat halaman dimuat
+window.onload = function () {
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+};
+
