@@ -339,11 +339,11 @@ button:hover {
 }
 
 /* ======== DARK MODE ======== */
-/* Default (Mode Terang) */
+/* Mode Terang (Default) */
 body {
     background-color: white;
     color: black;
-    transition: background 0.3s, color 0.3s;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Mode Gelap */
@@ -352,8 +352,8 @@ body {
     color: white;
 }
 
-/* Ubah elemen lain agar ikut berubah */
 .dark-mode button {
-    background: #444;
+    background-color: #333;
     color: white;
 }
+
