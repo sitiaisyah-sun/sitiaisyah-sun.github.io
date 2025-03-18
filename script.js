@@ -45,5 +45,20 @@ document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener("mousemove", function(e) {
         cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
     });
-});
 
+    document.addEventListener("click", function(e) {
+        const signature = document.createElement("span");
+        signature.textContent = "✍";
+        signature.style.position = "absolute";
+        signature.style.left = `${e.clientX}px`;
+        signature.style.top = `${e.clientY}px`;
+        signature.style.fontSize = "20px";
+        signature.style.color = "pink";
+        signature.style.pointerEvents = "none";
+        document.body.appendChild(signature);
+
+        setTimeout(() => {
+            signature.remove();
+        }, 1000);
+    });
+});
