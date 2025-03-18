@@ -339,15 +339,31 @@ button:hover {
 }
 
 /* ======== DARK MODE ======== */
-body {
-    background-color: white;
-    color: black;
-    font-family: Arial, sans-serif;
-    text-align: center;
+/* Gaya untuk dark mode */
+body.dark-mode {
+    background-color: #121212; /* Latar belakang gelap */
+    color: #ffffff; /* Teks putih */
 }
 
-.dark-mode {
-    background-color: #121212;
-    color: white;
+/* Gaya untuk elemen lain dalam dark mode */
+header.dark-mode, footer.dark-mode {
+    background-color: #1e1e1e; /* Latar belakang header dan footer */
+    color: #ffffff; /* Teks putih di header dan footer */
+}
+
+/* Gaya untuk link dalam dark mode */
+a {
+    color: #1e90ff; /* Warna biru untuk link */
+}
+
+a:hover {
+    color: #87cefa; /* Warna biru muda saat hover */
+}
+
+/* Gaya untuk textarea dan input dalam dark mode */
+textarea, input {
+    background-color: #333; /* Latar belakang gelap untuk input */
+    color: #ffffff; /* Teks putih untuk input */
+    border: 1px solid #555; /* Border yang lebih terang */
 }
 
