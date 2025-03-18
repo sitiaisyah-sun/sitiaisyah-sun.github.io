@@ -30,42 +30,56 @@ async function getWeather() {
         document.getElementById('weather-result').innerHTML = `<p style="color: red;">${error.message}</p>`;
     }
 }
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f5f5f5;
+// Daftar novel
+const books = [
+    { title: "Laut Bercerita", author: "Leila S. Chudori", image: "laut-bercerita.jpg" },
+    { title: "Bumi", author: "Tere Liye", image: "bumi.jpg" },
+    { title: "Dilan 1990", author: "Pidi Baiq", image: "dilan-1990.jpg" },
+    { title: "Hujan", author: "Tere Liye", image: "hujan.jpg" },
+    { title: "Ayah", author: "Andrea Hirata", image: "ayah.jpg" },
+    { title: "Pulang", author: "Tere Liye", image: "pulang.jpg" }
+];
+
+// Fungsi untuk menampilkan daftar novel
+function displayBooks() {
+    const bookList = document.getElementById("book-list");
+    bookList.innerHTML = ""; // Kosongkan daftar sebelum menambahkan elemen baru
+
+    books.forEach(book => {
+        const bookItem = document.createElement("div");
+        bookItem.classList.add("book-item");
+
+        bookItem.innerHTML = `
+            <img src="${book.image}" alt="${book.title}">
+            <h3>${book.title}</h3>
+            <p>${book.author}</p>
+        `;
+
+        bookList.appendChild(bookItem);
+    });
 }
 
-h1 {
-    color: #333;
+// Fungsi untuk mencari novel
+function searchBooks() {
+    const searchTerm = document.getElementById("search-input").value.toLowerCase();
+    const filteredBooks = books.filter(book => book.title.toLowerCase().includes(searchTerm));
+
+    const bookList = document.getElementById("book-list");
+    bookList.innerHTML = ""; // Kosongkan daftar sebelum menampilkan hasil pencarian
+
+    filteredBooks.forEach(book => {
+        const bookItem = document.createElement("div");
+        bookItem.classList.add("book-item");
+
+        bookItem.innerHTML = `
+            <img src="${book.image}" alt="${book.title}">
+            <h3>${book.title}</h3>
+            <p>${book.author}</p>
+        `;
+
+        bookList.appendChild(bookItem);
+    });
 }
 
-#search-input {
-    width: 50%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-#book-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.book-item {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    width: 200px;
-    text-align: center;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.book-item img {
-    width: 100px;
-    height: 150px;
-    border-radius: 5px;
-}
+// Panggil fungsi untuk menampilkan novel saat halaman dimuat
+window.onload = displayBooks;
