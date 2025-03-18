@@ -365,13 +365,4 @@ textarea, input {
     background-color: #333; /* Latar belakang gelap untuk input */
     color: #ffffff; /* Teks putih untuk input */
     border: 1px solid #555; /* Border yang lebih terang */
-    border-radius: 4px; /* Sudut yang membulat */
-    padding: 10px; /* Ruang dalam */
-}
-
-/* Gaya untuk welcome box */
-.welcome-box {
-    background-color: #1e1e1e; /* Latar belakang untuk welcome box */
-    padding: 20px; /* Ruang dalam */
-    border-radius: 8px; /* Sudut yang membulat */
 }
