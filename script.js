@@ -32,7 +32,7 @@ async function getWeather() {
 }
 // Daftar novel
 const books = [
-    { title: "Laut Bercerita", author: "Leila S. Chudori", image: "laut-bercerita.jpg", url: "https://www.goodreads.com/book/show/36544600-laut-bercerita" },
+    { title: "Laut Bercerita", author: "Leila S. Chudori", image: "laut-bercerita.jpg", url: "https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/items/9786024246945_Laut-Bercerita.png" },
     { title: "Bumi", author: "Tere Liye", image: "bumi.jpg", url: "https://www.goodreads.com/book/show/20733402-bumi" },
     { title: "Dilan 1990", author: "Pidi Baiq", image: "dilan-1990.jpg", url: "https://www.goodreads.com/book/show/22919642-dilan-dia-adalah-dilanku-tahun-1990" },
     { title: "Hujan", author: "Tere Liye", image: "hujan.jpg", url: "https://www.goodreads.com/book/show/28964247-hujan" },
