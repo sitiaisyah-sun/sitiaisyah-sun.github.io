@@ -342,7 +342,7 @@ button:hover {
 /* Gaya untuk dark mode */
 body.dark-mode {
     background-color: #121212; /* Latar belakang gelap */
-    color: #000000; /* Teks hitam */
+    color: #ffffff; /* Teks putih */
 }
 
 /* Gaya untuk elemen lain dalam dark mode */
@@ -365,10 +365,4 @@ textarea, input {
     background-color: #333; /* Latar belakang gelap untuk input */
     color: #ffffff; /* Teks putih untuk input */
     border: 1px solid #555; /* Border yang lebih terang */
-}
-.content {
-    background-color: rgba(255, 255, 255, 0.8); /* Ubah warna sesuai dengan kebutuhan */
-    color: #000; /* Pastikan teks cukup kontras */
-    padding: 20px; /* Tambahkan padding jika perlu */
-    border-radius: 10px; /* Opsional: menambah gaya */
 }
