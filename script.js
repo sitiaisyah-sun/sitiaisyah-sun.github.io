@@ -135,18 +135,58 @@ function openModal(index) {
     document.getElementById("book-modal").style.display = "block";
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    displayBooks();
+document.addEventListener("DOMContentLoaded", function () {
+    const books = [
+        {
+            title: "Laskar Pelangi",
+            author: "Andrea Hirata",
+            image: "images/laskar-pelangi.jpg",
+            description: "Novel inspiratif tentang perjuangan anak-anak Belitung."
+        },
+        {
+            title: "Dilan 1990",
+            author: "Pidi Baiq",
+            image: "images/dilan-1990.jpg",
+            description: "Kisah cinta Dilan dan Milea yang penuh nostalgia."
+        },
+        {
+            title: "Bumi",
+            author: "Tere Liye",
+            image: "images/bumi.jpg",
+            description: "Petualangan seorang anak dalam dunia paralel."
+        }
+    ];
 
-    document.querySelector(".close").addEventListener("click", () => {
-        document.getElementById("book-modal").style.display = "none";
+    const bookList = document.getElementById("book-list");
+    const searchInput = document.getElementById("search");
+
+    function displayBooks(filter = "") {
+        bookList.innerHTML = ""; 
+        books.forEach(book => {
+            if (book.title.toLowerCase().includes(filter.toLowerCase())) {
+                const bookDiv = document.createElement("div");
+                bookDiv.classList.add("book");
+                bookDiv.innerHTML = `
+                    <img src="${book.image}" alt="${book.title}">
+                    <h3>${book.title}</h3>
+                    <p>${book.author}</p>
+                    <button onclick="showDetail('${book.title}', '${book.image}', '${book.description}')">Lihat Detail</button>
+                `;
+                bookList.appendChild(bookDiv);
+            }
+        });
+    }
+
+    searchInput.addEventListener("input", function () {
+        displayBooks(this.value);
     });
 
-    window.onclick = (event) => {
-        if (event.target === document.getElementById("book-modal")) {
-            document.getElementById("book-modal").style.display = "none";
-        }
-    };
+    displayBooks();
 });
+
+function showDetail(title, image, description) {
+    alert(`${title}\n\n${description}`);
+}
+
 <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
