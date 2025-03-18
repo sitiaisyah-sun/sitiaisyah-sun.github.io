@@ -32,33 +32,26 @@ async function getWeather() {
 }
 document.addEventListener("DOMContentLoaded", function() {
     const cursor = document.createElement("div");
-    cursor.style.width = "10px";
-    cursor.style.height = "10px";
-    cursor.style.backgroundColor = "pink";
+    cursor.style.width = "15px";
+    cursor.style.height = "15px";
+    cursor.style.backgroundColor = "rgba(255, 105, 180, 0.8)";
     cursor.style.position = "absolute";
     cursor.style.borderRadius = "50%";
     cursor.style.pointerEvents = "none";
     cursor.style.zIndex = "1000";
-    cursor.style.transition = "transform 0.1s ease-out";
+    cursor.style.transition = "transform 0.1s ease-out, background-color 0.3s ease";
+    cursor.style.boxShadow = "0 0 10px rgba(255, 105, 180, 0.8)";
     document.body.appendChild(cursor);
     
     document.addEventListener("mousemove", function(e) {
         cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
     });
 
-    document.addEventListener("click", function(e) {
-        const signature = document.createElement("span");
-        signature.textContent = "✍";
-        signature.style.position = "absolute";
-        signature.style.left = `${e.clientX}px`;
-        signature.style.top = `${e.clientY}px`;
-        signature.style.fontSize = "20px";
-        signature.style.color = "pink";
-        signature.style.pointerEvents = "none";
-        document.body.appendChild(signature);
+    document.addEventListener("mouseenter", function() {
+        cursor.style.backgroundColor = "rgba(255, 20, 147, 1)";
+    });
 
-        setTimeout(() => {
-            signature.remove();
-        }, 1000);
+    document.addEventListener("mouseleave", function() {
+        cursor.style.backgroundColor = "rgba(255, 105, 180, 0.8)";
     });
 });
