@@ -84,3 +84,68 @@ function searchBooks() {
 
 // Panggil fungsi untuk menampilkan novel saat halaman dimuat
 window.onload = displayBooks;
+
+const books = [
+    { 
+        title: "Laut Bercerita", 
+        author: "Leila S. Chudori", 
+        image: "https://upload.wikimedia.org/wikipedia/id/7/70/Laut_Bercerita.jpg", 
+        description: "Novel yang menceritakan kisah aktivis yang hilang di era Orde Baru."
+    },
+    { 
+        title: "Bumi", 
+        author: "Tere Liye", 
+        image: "https://upload.wikimedia.org/wikipedia/id/d/dc/Bumi_Tere_Liye.jpg", 
+        description: "Petualangan Raib, Seli, dan Ali di dunia paralel yang penuh keajaiban."
+    },
+    { 
+        title: "Dilan 1990", 
+        author: "Pidi Baiq", 
+        image: "https://upload.wikimedia.org/wikipedia/id/8/82/Dilan_1990_sampul.jpg", 
+        description: "Kisah romantis remaja Bandung antara Dilan dan Milea."
+    }
+];
+
+function displayBooks() {
+    const bookList = document.getElementById("book-list");
+    bookList.innerHTML = "";
+
+    books.forEach((book, index) => {
+        const bookItem = document.createElement("div");
+        bookItem.classList.add("book-item");
+
+        bookItem.innerHTML = `
+            <img src="${book.image}" alt="${book.title}" onclick="openModal(${index})">
+            <h3>${book.title}</h3>
+            <p>${book.author}</p>
+        `;
+
+        bookList.appendChild(bookItem);
+    });
+}
+
+function openModal(index) {
+    const book = books[index];
+
+    document.getElementById("modal-title").textContent = book.title;
+    document.getElementById("modal-image").src = book.image;
+    document.getElementById("modal-author").textContent = "Penulis: " + book.author;
+    document.getElementById("modal-description").textContent = book.description;
+
+    document.getElementById("book-modal").style.display = "block";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    displayBooks();
+
+    document.querySelector(".close").addEventListener("click", () => {
+        document.getElementById("book-modal").style.display = "none";
+    });
+
+    window.onclick = (event) => {
+        if (event.target === document.getElementById("book-modal")) {
+            document.getElementById("book-modal").style.display = "none";
+        }
+    };
+});
+
