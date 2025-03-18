@@ -30,28 +30,3 @@ async function getWeather() {
         document.getElementById('weather-result').innerHTML = `<p style="color: red;">${error.message}</p>`;
     }
 }
-document.addEventListener("DOMContentLoaded", function() {
-    const cursor = document.createElement("div");
-    cursor.style.width = "15px";
-    cursor.style.height = "15px";
-    cursor.style.backgroundColor = "rgba(255, 105, 180, 0.8)";
-    cursor.style.position = "absolute";
-    cursor.style.borderRadius = "50%";
-    cursor.style.pointerEvents = "none";
-    cursor.style.zIndex = "1000";
-    cursor.style.transition = "transform 0.1s ease-out, background-color 0.3s ease";
-    cursor.style.boxShadow = "0 0 10px rgba(255, 105, 180, 0.8)";
-    document.body.appendChild(cursor);
-    
-    document.addEventListener("mousemove", function(e) {
-        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    });
-
-    document.addEventListener("mouseenter", function() {
-        cursor.style.backgroundColor = "rgba(255, 20, 147, 1)";
-    });
-
-    document.addEventListener("mouseleave", function() {
-        cursor.style.backgroundColor = "rgba(255, 105, 180, 0.8)";
-    });
-});
