@@ -342,7 +342,7 @@ button:hover {
 /* Gaya untuk dark mode */
 body.dark-mode {
     background-color: #121212; /* Latar belakang gelap */
-    color: #ffffff; /* Teks putih */
+    color: #000000; /* Teks putih */
 }
 
 /* Gaya untuk elemen lain dalam dark mode */
