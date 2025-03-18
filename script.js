@@ -220,13 +220,13 @@ function displayComments() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const darkModeToggle = document.getElementById("darkModeToggle");
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
     const body = document.body;
 
-    // Cek preferensi yang tersimpan
+    // Cek apakah sebelumnya dark mode aktif
     if (localStorage.getItem("theme") === "dark") {
         body.classList.add("dark-mode");
-        darkModeToggle.textContent = "☀️ Mode Terang";
+        darkModeToggle.textContent = "Switch to Light Mode";
     }
 
     darkModeToggle.addEventListener("click", function () {
@@ -234,10 +234,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (body.classList.contains("dark-mode")) {
             localStorage.setItem("theme", "dark");
-            darkModeToggle.textContent = "☀️ Mode Terang";
+            darkModeToggle.textContent = "Switch to Light Mode";
         } else {
             localStorage.setItem("theme", "light");
-            darkModeToggle.textContent = "🌙 Mode Gelap";
+            darkModeToggle.textContent = "Switch to Dark Mode";
         }
     });
 });
