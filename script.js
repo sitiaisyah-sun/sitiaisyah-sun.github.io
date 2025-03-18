@@ -191,32 +191,33 @@ function showDetail(title, image, description) {
 <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    // Menyimpan komentar dalam array
-let comments = [];
+    /<script>
+    function addComment() {
+        var commentInput = document.getElementById("comment-input");
+        var commentText = commentInput.value;
 
-// Fungsi menambahkan komentar
-function addComment() {
-    let commentInput = document.getElementById("comment-input");
-    let commentText = commentInput.value.trim();
+        if (commentText.trim() !== "") {
+            var commentList = document.getElementById("comment-list");
 
-    if (commentText !== "") {
-        comments.push(commentText); // Tambah komentar ke array
-        commentInput.value = ""; // Kosongkan textarea
-        displayComments(); // Perbarui tampilan komentar
+            // Create a new div for the comment
+            var newComment = document.createElement("div");
+            newComment.textContent = commentText;
+            newComment.style.border = "1px solid #ccc";
+            newComment.style.padding = "10px";
+            newComment.style.marginTop = "5px";
+            newComment.style.borderRadius = "4px";
+
+            // Append the new comment to the comment list
+            commentList.appendChild(newComment);
+
+            // Clear the input field
+            commentInput.value = "";
+        } else {
+            alert("Komentar tidak boleh kosong!");
+        }
     }
-}
-
-// Fungsi menampilkan komentar
-function displayComments() {
-    let commentList = document.getElementById("comment-list");
-    commentList.innerHTML = ""; // Bersihkan daftar komentar
-
-    comments.forEach(comment => {
-        let commentDiv = document.createElement("div");
-        commentDiv.classList.add("comment");
-        commentDiv.textContent = comment;
-        commentList.appendChild(commentDiv);
-    });
+</script>
+    
 }
 
 document.addEventListener("DOMContentLoaded", function () {
