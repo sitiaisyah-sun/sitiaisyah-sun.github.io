@@ -32,13 +32,14 @@ async function getWeather() {
 }
 // Daftar novel
 const books = [
-    { title: "Laut Bercerita", author: "Leila S. Chudori", image: "laut-bercerita.jpg" },
-    { title: "Bumi", author: "Tere Liye", image: "bumi.jpg" },
-    { title: "Dilan 1990", author: "Pidi Baiq", image: "dilan-1990.jpg" },
-    { title: "Hujan", author: "Tere Liye", image: "hujan.jpg" },
-    { title: "Ayah", author: "Andrea Hirata", image: "ayah.jpg" },
-    { title: "Pulang", author: "Tere Liye", image: "pulang.jpg" }
+    { title: "Laut Bercerita", author: "Leila S. Chudori", image: "laut-bercerita.jpg", url: "https://www.goodreads.com/book/show/36544600-laut-bercerita" },
+    { title: "Bumi", author: "Tere Liye", image: "bumi.jpg", url: "https://www.goodreads.com/book/show/20733402-bumi" },
+    { title: "Dilan 1990", author: "Pidi Baiq", image: "dilan-1990.jpg", url: "https://www.goodreads.com/book/show/22919642-dilan-dia-adalah-dilanku-tahun-1990" },
+    { title: "Hujan", author: "Tere Liye", image: "hujan.jpg", url: "https://www.goodreads.com/book/show/28964247-hujan" },
+    { title: "Ayah", author: "Andrea Hirata", image: "ayah.jpg", url: "https://www.goodreads.com/book/show/26226366-ayah" },
+    { title: "Pulang", author: "Tere Liye", image: "pulang.jpg", url: "https://www.goodreads.com/book/show/31548858-pulang" }
 ];
+
 
 // Fungsi untuk menampilkan daftar novel
 function displayBooks() {
