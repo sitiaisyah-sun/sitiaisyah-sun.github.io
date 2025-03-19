@@ -366,3 +366,8 @@ textarea, input {
     color: #ffffff; /* Teks putih untuk input */
     border: 1px solid #555; /* Border yang lebih terang */
 }
+.gambar-buku {
+    width: 200px;
+    height: 300px; /* Sesuaikan dengan ukuran gambar Laut Bercerita */
+    object-fit: cover;
+}
