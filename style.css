@@ -371,3 +371,15 @@ textarea, input {
     height: 300px; /* Sesuaikan dengan ukuran gambar Laut Bercerita */
     object-fit: cover;
 }
+
+#koleksi-pdf {
+    margin-top: 40px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#koleksi-pdf iframe {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
