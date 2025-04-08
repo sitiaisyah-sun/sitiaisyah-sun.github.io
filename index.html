@@ -66,41 +66,27 @@
 <img src="https://cdn.gramedia.com/uploads/items/9786020332956_Bumi-New-Cover.jpg" width=130px>    
 <img src="https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/items/Mismatch_cov.jpg" width=130px>
 <img src="https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/items/9786022203063_Lumiere-Blanche_CYSRq7a.jpg" width=130px>        
-        <h2>Koleksi Buku Digital</h2>
-<div class="book-gallery">
-  <div class="book" onclick="showBookModal(
-    'Reasons to Stay Alive',
-    '“You are not broken. You are human.”',
-    'pdf/Reasons-to-Stay-Alive.pdf',
-    'images/reasons-cover.jpg'
-  )">
-    <img src="images/reasons-cover.jpg" alt="Reasons to Stay Alive">
-    <p><strong>Reasons to Stay Alive</strong></p>
-  </div>
-</div>
-
-<!-- Modal (Pop-up) -->
-<div id="book-modal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <h2 id="modal-title"></h2>
-    <img id="modal-image" src="" alt="">
-    <p id="modal-description"></p>
-    <div class="modal-buttons">
-      <a id="read-link" href="#" target="_blank" class="btn">Baca PDF</a>
-      <a id="download-link" href="#" download class="btn">Download PDF</a>
-      <button onclick="closeModal()" class="btn close-btn">Tutup</button>
-    </div>
-  </div>
-</div>
-
-
         <div id="comment-section">
     <h2>Kolom Komentar</h2>
     <textarea id="comment-input" placeholder="Tulis komentar..." rows="4" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
     <button onclick="addComment()">Kirim</button>
     <div id="comment-list" style="margin-top: 20px;">
         <!-- Komentar akan ditampilkan di sini -->
+    </div>
+</div>
+    </div>
+    <main>
+        <div id="book-list"></div>
+    </main>
+        <div id="bookList"></div> <!-- Tempat untuk menampilkan daftar buku -->
+<!-- Modal untuk Detail Buku -->
+<div id="book-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-title"></h2>
+        <img id="modal-image" src="" alt="">
+        <p id="modal-author"></p>
+        <p id="modal-description"></p>
     </div>
 </div>
 
