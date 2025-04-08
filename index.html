@@ -70,12 +70,22 @@
   <h2>📚 Koleksi Buku Digital</h2>
   <p>Silakan baca atau unduh koleksi buku saya dari halaman ini:</p>
 
-  <div class="pdf-gallery">
-  <div class="pdf-card">
-    <a href="pdf/Reasons-to-Stay-Alive.pdf" target="_blank">
-      <img src="images/reasons-to-stay-alive-cover.jpg" alt="Cover Reasons to Stay Alive">
-      <p>Reasons to Stay Alive</p>
-    </a>
+  <!-- Kartu Buku -->
+<div class="book-card" onclick="openModal('Reasons to Stay Alive', 'images/reasons-cover.jpg', '“You’re not a burden. You have a burden.” — Matt Haig', 'pdf/Reasons-to-Stay-Alive.pdf')">
+    <img src="images/reasons-cover.jpg" alt="Cover Reasons to Stay Alive">
+    <p>Reasons to Stay Alive</p>
+</div>
+
+<!-- Modal -->
+<div id="pdf-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 id="modal-title"></h2>
+    <img id="modal-image" src="" alt="Cover Buku">
+    <blockquote id="modal-quote"></blockquote>
+    <a id="read-btn" href="#" target="_blank" class="btn">Baca PDF</a>
+    <a id="download-btn" href="#" download class="btn download">Download PDF</a>
+    <button onclick="closeModal()" class="btn close">Tutup</button>
   </div>
 </div>
 
