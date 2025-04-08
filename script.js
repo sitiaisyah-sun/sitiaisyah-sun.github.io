@@ -240,3 +240,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+function showBookModal(title, description, pdfLink, imageLink) {
+  document.getElementById('modal-title').textContent = title;
+  document.getElementById('modal-description').textContent = description;
+  document.getElementById('modal-image').src = imageLink;
+  document.getElementById('read-link').href = pdfLink;
+  document.getElementById('download-link').href = pdfLink;
+  document.getElementById('book-modal').style.display = 'block';
+}
+
+function closeModal() {
+  document.getElementById('book-modal').style.display = 'none';
+}
+
