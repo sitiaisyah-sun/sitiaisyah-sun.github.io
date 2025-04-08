@@ -372,14 +372,47 @@ textarea, input {
     object-fit: cover;
 }
 
-#koleksi-pdf {
-    margin-top: 40px;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
+#koleksi-digital {
+  padding: 30px;
+  text-align: center;
 }
 
-#koleksi-pdf iframe {
-    border: 1px solid #ccc;
-    border-radius: 8px;
+.book-card {
+  display: inline-block;
+  width: 200px;
+  margin: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: #fff;
+}
+
+.book-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.book-card h4 {
+  margin: 10px 0;
+}
+
+.book-card a {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.btn-baca {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-unduh {
+  background-color: #28a745;
+  color: white;
 }
