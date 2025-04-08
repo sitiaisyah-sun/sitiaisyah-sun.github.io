@@ -41,10 +41,31 @@ async function getWeather() {
 // 3. Daftar Buku
 // ========================
 const books = [
-    { title: "Laut Bercerita", author: "Leila S. Chudori", image: "https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/items/9786024246945_Laut-Bercerita.png", description: "Novel yang menceritakan kisah aktivis yang hilang di era Orde Baru", pdf: "https://dn720001.ca.archive.org/0/items/laut-bercerita-leila-s.-chudori/Laut%20Bercerita%20%28Leila%20S.%20Chudori%29.pdf."},
-    { title: "Bumi", author: "Tere Liye", image: "https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/items/img20220830_10560995.jpg", description: "Petualangan Raib, Seli, dan Ali di dunia paralel yang penuh keajaiban." },
-    { title: "Dilan 1990", author: "Pidi Baiq", image: "https://books.google.co.id/books/publisher/content?id=U_-BBAAAQBAJ&hl=id&pg=PP1&img=1&zoom=3&bul=1&sig=ACfU3U367vR6v7YFVJQq-uXRZqfo01r3-A&w=1280", description: "Kisah romantis remaja Bandung antara Dilan dan Milea." },
-    { title: "Laskar Pelangi", author: "Andrea Hirata", image: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1489732961i/1362193.jpg", description: "Novel inspiratif tentang perjuangan anak-anak Belitung." }
+    {
+        title: "Laut Bercerita",
+        author: "Leila S. Chudori",
+        image: "https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/items/9786024246945_Laut-Bercerita.png",
+        description: "Novel yang menceritakan kisah aktivis yang hilang di era Orde Baru",
+        pdf: "https://dn720001.ca.archive.org/0/items/laut-bercerita-leila-s.-chudori/Laut%20Bercerita%20%28Leila%20S.%20Chudori%29.pdf"
+    },
+    {
+        title: "Bumi",
+        author: "Tere Liye",
+        image: "https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/items/img20220830_10560995.jpg",
+        description: "Petualangan Raib, Seli, dan Ali di dunia paralel yang penuh keajaiban."
+    },
+    {
+        title: "Dilan 1990",
+        author: "Pidi Baiq",
+        image: "https://books.google.co.id/books/publisher/content?id=U_-BBAAAQBAJ&hl=id&pg=PP1&img=1&zoom=3&bul=1&sig=ACfU3U367vR6v7YFVJQq-uXRZqfo01r3-A&w=1280",
+        description: "Kisah romantis remaja Bandung antara Dilan dan Milea."
+    },
+    {
+        title: "Laskar Pelangi",
+        author: "Andrea Hirata",
+        image: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1489732961i/1362193.jpg",
+        description: "Novel inspiratif tentang perjuangan anak-anak Belitung."
+    }
 ];
 
 // ========================
@@ -59,10 +80,16 @@ function displayBooks(filter = "") {
             const bookDiv = document.createElement("div");
             bookDiv.classList.add("book");
 
+            let pdfButton = "";
+            if (book.pdf) {
+                pdfButton = `<a href="${book.pdf}" target="_blank" style="display:inline-block;margin-top:5px;color:white;background-color:#007bff;padding:5px 10px;border-radius:5px;text-decoration:none;">Baca PDF</a>`;
+            }
+
             bookDiv.innerHTML = `
                 <img src="${book.image}" alt="${book.title}" onclick="openModal(${index})">
                 <h3>${book.title}</h3>
                 <p>${book.author}</p>
+                ${pdfButton}
             `;
 
             bookList.appendChild(bookDiv);
