@@ -372,26 +372,28 @@ textarea, input {
     object-fit: cover;
 }
 
-.book-container {
+.book-gallery {
   display: flex;
-  justify-content: center;
-  margin-top: 30px;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
-.book-card {
-  width: 150px;
-  cursor: pointer;
+.book {
   text-align: center;
-  transition: transform 0.3s ease;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
-.book-card img {
-  width: 100%;
+.book img {
+  width: 150px;
+  height: 220px;
+  object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.book-card:hover {
+.book:hover {
   transform: scale(1.05);
 }
 
@@ -409,43 +411,35 @@ textarea, input {
 
 .modal-content {
   background-color: #fff;
-  margin: 5% auto;
+  margin: 10% auto;
   padding: 20px;
-  width: 90%;
-  max-width: 500px;
   border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
   text-align: center;
-  position: relative;
 }
 
 .modal-content img {
   width: 150px;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
-.modal-content .btn {
-  margin: 10px 5px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
+.modal-buttons .btn {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 5px;
+  background-color: #007bff;
   color: white;
-  background-color: #007B8A;
-  cursor: pointer;
   text-decoration: none;
+  border-radius: 6px;
 }
 
-.modal-content .btn.download {
-  background-color: #3b9ca5;
-}
-
-.modal-content .btn.close {
-  background-color: #023047;
+.close-btn {
+  background-color: #dc3545;
 }
 
 .close {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 24px;
+  float: right;
+  font-size: 28px;
   cursor: pointer;
 }
