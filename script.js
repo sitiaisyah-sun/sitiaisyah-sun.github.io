@@ -52,21 +52,21 @@ const books = [
         title: "Bintang",
         author: "Tere Liye",
         image: "https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/picture_meta/2023/4/10/ccmq4kges6gstnsrrtxabw.jpg",
-        description: "Petualangan Raib, Seli, dan Ali di dunia paralel yang penuh keajaiban."
+        description: "Petualangan Raib, Seli, dan Ali di dunia paralel yang penuh keajaiban.",
         pdf: "https://ia802203.us.archive.org/33/items/TereLiyeBintang/Tere%20Liye%20-%20Bintang.pdf"
     },
     {
         title: "Dilan 1990",
         author: "Pidi Baiq",
         image: "https://books.google.co.id/books/publisher/content?id=U_-BBAAAQBAJ&hl=id&pg=PP1&img=1&zoom=3&bul=1&sig=ACfU3U367vR6v7YFVJQq-uXRZqfo01r3-A&w=1280",
-        description: "Kisah romantis remaja Bandung antara Dilan dan Milea."
+        description: "Kisah romantis remaja Bandung antara Dilan dan Milea.",
         pdf: "https://ia800904.us.archive.org/34/items/PidiBaiqDilan.pdf/Pidi%20baiq%20-%20Dilan.pdf.pdf"
     },
     {
         title: "Laskar Pelangi",
         author: "Andrea Hirata",
         image: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1489732961i/1362193.jpg",
-        description: "Novel inspiratif tentang perjuangan anak-anak Belitung."
+        description: "Novel inspiratif tentang perjuangan anak-anak Belitung.",
         pdf: "https://dn790002.ca.archive.org/0/items/AndreaHirataLaskarPelangi_201805/Andrea%20Hirata%20-%20Laskar%20Pelangi.pdf"
     }
 ];
