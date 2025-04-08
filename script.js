@@ -169,3 +169,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // Tampilkan buku awal
     displayBooks();
 });
+
+/* Popup Beasiswa */
+function tampilkanPopupBeasiswa() {
+    document.getElementById("popup-beasiswa").style.display = "flex";
+}
+
+function tutupPopupBeasiswa() {
+    document.getElementById("popup-beasiswa").style.display = "none";
+}
+
+
