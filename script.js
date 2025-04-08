@@ -41,7 +41,7 @@ async function getWeather() {
 // 3. Daftar Buku
 // ========================
 const books = [
-    { title: "Laut Bercerita", author: "Leila S. Chudori", image: "https://upload.wikimedia.org/wikipedia/id/7/70/Laut_Bercerita.jpg", description: "Novel yang menceritakan kisah aktivis yang hilang di era Orde Baru." },
+    { title: "Laut Bercerita", author: "Leila S. Chudori", image: "https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/items/9786024246945_Laut-Bercerita.png", description: "Novel yang menceritakan kisah aktivis yang hilang di era Orde Baru." },
     { title: "Bumi", author: "Tere Liye", image: "https://upload.wikimedia.org/wikipedia/id/d/dc/Bumi_Tere_Liye.jpg", description: "Petualangan Raib, Seli, dan Ali di dunia paralel yang penuh keajaiban." },
     { title: "Dilan 1990", author: "Pidi Baiq", image: "https://upload.wikimedia.org/wikipedia/id/8/82/Dilan_1990_sampul.jpg", description: "Kisah romantis remaja Bandung antara Dilan dan Milea." },
     { title: "Laskar Pelangi", author: "Andrea Hirata", image: "images/laskar-pelangi.jpg", description: "Novel inspiratif tentang perjuangan anak-anak Belitung." }
