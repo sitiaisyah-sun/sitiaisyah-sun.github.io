@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Perpustakaan Aisyah</title>
+  <title>Perpustakaan Aisyah - Auth</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css">
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
   <style>
     .hidden { display: none; }
-    .toggle-buttons { margin-bottom: 1rem; display: flex; justify-content: center; gap: 10px; }
+    .toggle-buttons { margin-bottom: 1rem; text-align: center; }
   </style>
 </head>
 <body>
@@ -17,34 +17,33 @@
     <div class="container">
       <div class="row mb-5">
         <div class="col-md-8 col-xl-6 text-center mx-auto">
-          <h2 id="form-title">Login</h2>
-          <p class="w-lg-50">Selamat datang! Silakan masuk atau daftar akun baru.</p>
+          <h2 id="form-title">Daftar Akun Baru</h2>
+          <p class="w-lg-50">Silakan isi data untuk membuat akun atau login jika sudah punya akun.</p>
         </div>
       </div>
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-7 col-lg-6 col-xl-5">
-          <div class="card mb-5 shadow">
-            <div class="card-body d-flex flex-column align-items-center">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card shadow mb-5">
+            <div class="card-body">
 
               <!-- Toggle Button -->
               <div class="toggle-buttons">
-                <button class="btn btn-outline-primary" onclick="showLogin()">Login</button>
-                <button class="btn btn-outline-secondary" onclick="showRegister()">Register</button>
+                <p id="toggle-text">Sudah punya akun? <a href="#" onclick="showLogin()">Login di sini</a></p>
               </div>
 
+              <!-- Register Form (default) -->
+              <form id="register-form">
+                <div class="mb-3"><input class="form-control" type="text" name="name" placeholder="Nama Lengkap" required /></div>
+                <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" required /></div>
+                <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" required /></div>
+                <div class="mb-3"><button class="btn btn-success w-100" type="submit">Daftar</button></div>
+              </form>
+
               <!-- Login Form -->
-              <form id="login-form" class="w-100">
+              <form id="login-form" class="hidden">
                 <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" required /></div>
                 <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" required /></div>
                 <div class="mb-3"><button class="btn btn-primary w-100" type="submit">Login</button></div>
-              </form>
-
-              <!-- Register Form -->
-              <form id="register-form" class="w-100 hidden">
-                <div class="mb-3"><input class="form-control" type="text" name="name" placeholder="Full Name" required /></div>
-                <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" required /></div>
-                <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" required /></div>
-                <div class="mb-3"><button class="btn btn-success w-100" type="submit">Register</button></div>
               </form>
 
             </div>
@@ -56,7 +55,6 @@
 
   <!-- Firebase & Logic -->
   <script>
-    // Firebase config
     const firebaseConfig = {
       apiKey: "AIzaSyD9UCm5f7RY9thUG10Onx0Bp0WVL2CcMlk",
       authDomain: "perpustakaan-aisyah-5eacb.firebaseapp.com",
@@ -66,60 +64,53 @@
       appId: "1:109658069909:web:cb4b64582f0f986d72349c",
       measurementId: "G-3908ZDM8VV"
     };
-
-    // Init Firebase
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
 
     const loginForm = document.getElementById('login-form');
     const registerForm = document.getElementById('register-form');
-    const title = document.getElementById('form-title');
+    const formTitle = document.getElementById('form-title');
+    const toggleText = document.getElementById('toggle-text');
 
     function showLogin() {
       loginForm.classList.remove('hidden');
       registerForm.classList.add('hidden');
-      title.textContent = 'Login';
+      formTitle.textContent = 'Login Akun';
+      toggleText.innerHTML = 'Belum punya akun? <a href="#" onclick="showRegister()">Daftar di sini</a>';
     }
 
     function showRegister() {
-      loginForm.classList.add('hidden');
       registerForm.classList.remove('hidden');
-      title.textContent = 'Register';
+      loginForm.classList.add('hidden');
+      formTitle.textContent = 'Daftar Akun Baru';
+      toggleText.innerHTML = 'Sudah punya akun? <a href="#" onclick="showLogin()">Login di sini</a>';
     }
-
-    // Login
-    loginForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const email = loginForm.querySelector('input[name="email"]').value;
-      const password = loginForm.querySelector('input[name="password"]').value;
-
-      auth.signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-          alert('Login berhasil! Selamat datang ' + userCredential.user.email);
-        })
-        .catch((error) => {
-          alert('Login gagal: ' + error.message);
-        });
-    });
 
     // Register
     registerForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      const name = registerForm.querySelector('input[name="name"]').value;
-      const email = registerForm.querySelector('input[name="email"]').value;
-      const password = registerForm.querySelector('input[name="password"]').value;
-
-      auth.createUserWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-          alert('Registrasi berhasil! Selamat datang ' + userCredential.user.email);
-          showLogin(); // Balik ke form login
+      const email = registerForm.email.value;
+      const password = registerForm.password.value;
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then(userCredential => {
+          alert('Registrasi berhasil! Silakan login.');
+          showLogin();
         })
-        .catch((error) => {
-          alert('Registrasi gagal: ' + error.message);
-        });
+        .catch(error => alert('Error: ' + error.message));
+    });
+
+    // Login
+    loginForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const email = loginForm.email.value;
+      const password = loginForm.password.value;
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(userCredential => {
+          alert('Login berhasil! Selamat datang, ' + userCredential.user.email);
+          // window.location.href = 'dashboard.html'; // kalau mau redirect
+        })
+        .catch(error => alert('Login gagal: ' + error.message));
     });
   </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
