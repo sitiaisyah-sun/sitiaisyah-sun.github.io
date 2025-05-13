@@ -140,59 +140,35 @@ function addComment() {
 }
 
 // ========================
-// 7. Dark Mode Toggle (dikelola di JS + CSS)
+// 7. Dark Mode Toggle
 // ========================
 document.addEventListener("DOMContentLoaded", function () {
     const darkModeToggle = document.getElementById("dark-mode-toggle");
+    const searchInput = document.getElementById("search");
     const body = document.body;
-    const header = document.querySelector("header");
-    const footer = document.querySelector("footer");
-
-    // Fungsi aktifkan dark mode
-    function enableDarkMode() {
-        body.classList.add("dark-mode");
-        header && header.classList.add("dark-mode");
-        footer && footer.classList.add("dark-mode");
-        localStorage.setItem("dark-mode", "enabled");
-    }
-
-    // Fungsi matikan dark mode
-    function disableDarkMode() {
-        body.classList.remove("dark-mode");
-        header && header.classList.remove("dark-mode");
-        footer && footer.classList.remove("dark-mode");
-        localStorage.setItem("dark-mode", "disabled");
-    }
 
     // Cek dark mode sebelumnya
     if (localStorage.getItem("dark-mode") === "enabled") {
-        enableDarkMode();
+        body.classList.add("dark-mode");
     }
 
-    // Event toggle
     if (darkModeToggle) {
         darkModeToggle.addEventListener("click", function () {
-            const isEnabled = body.classList.contains("dark-mode");
-            if (isEnabled) {
-                disableDarkMode();
-            } else {
-                enableDarkMode();
-            }
+            body.classList.toggle("dark-mode");
+            localStorage.setItem("dark-mode", body.classList.contains("dark-mode") ? "enabled" : "disabled");
         });
     }
 
-    // Aktifkan pencarian buku
-    const searchInput = document.getElementById("search");
+    // Aktifkan pencarian
     if (searchInput) {
         searchInput.addEventListener("input", function () {
             displayBooks(this.value);
         });
     }
 
-    // Tampilkan daftar buku awal
+    // Tampilkan buku awal
     displayBooks();
 });
-
 
 /* Popup Beasiswa */
 function tampilkanPopupBeasiswa() {
@@ -202,5 +178,3 @@ function tampilkanPopupBeasiswa() {
 function tutupPopupBeasiswa() {
     document.getElementById("popup-beasiswa").style.display = "none";
 }
-
-
