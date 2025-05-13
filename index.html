@@ -15,19 +15,6 @@
         header.dark-mode, footer.dark-mode {
             background-color: #1e1e1e;
         }
-        .login-button {
-            margin-top: 10px;
-            display: inline-block;
-            padding: 8px 15px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            text-decoration: none;
-        }
-        .login-button:hover {
-            background-color: #0056b3;
-        }
     </style>
 </head>
 <body class="home-page">
@@ -44,8 +31,7 @@
                 <li><a href="index.html" class="active">🏠 Beranda</a></li>
                 <li><a href="about.html">📖 Tentang Saya</a></li>
                 <li><a href="contact.html">✉ Hubungi Saya</a></li>
-                <li><a href="tabel.php">✉ Tabel Perkalian</a></li>
-                <li><a href="login.html" class="login-button">🔐 Login</a></li>
+                 <li><a href="tabel.php">✉ Tabel Perkalian</a></li>
             </ul>
         </nav>
     </header>
@@ -63,24 +49,25 @@
 
         <h3>Cari Novel</h3>
         <p>Carilah buku yang ingin Anda cari.</p>
-
-        <input type="text" id="search" placeholder="Cari buku..." style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px;">
+        
+         <input type="text" id="search" placeholder="Cari buku..." style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px;">
 
         <div id="book-list"></div>
 
         <!-- Info Beasiswa -->
-        <section id="berita">
-            <h2>Info Terbaru</h2>
-            <div class="berita-container">
-                <div class="berita-card">
-                    <h3>Beasiswa Pelindo Prestasi 2025</h3>
-                    <p>Universitas Sumatera Utara bekerja sama dengan PT Pelindo membuka pendaftaran beasiswa untuk mahasiswa berprestasi. Program ini mencakup bantuan pendidikan dan pengembangan diri.</p>
-                    <p><strong>Deadline:</strong> Cek segera karena kuota terbatas!</p>
-                    <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025" target="_blank">Baca Selengkapnya</a>
-                    <button onclick="tampilkanPopupBeasiswa()">Lihat Info Beasiswa</button>
-                </div>
-            </div>
-        </section>
+<section id="berita">
+  <h2>Info Terbaru</h2>
+  <div class="berita-container">
+    <div class="berita-card">
+      <h3>Beasiswa Pelindo Prestasi 2025</h3>
+      <p>Universitas Sumatera Utara bekerja sama dengan PT Pelindo membuka pendaftaran beasiswa untuk mahasiswa berprestasi. Program ini mencakup bantuan pendidikan dan pengembangan diri.</p>
+      <p><strong>Deadline:</strong> Cek segera karena kuota terbatas!</p>
+      <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025" target="_blank">Baca Selengkapnya</a>
+        <button onclick="tampilkanPopupBeasiswa()">Lihat Info Beasiswa</button>
+
+    </div>
+  </div>
+</section>
 
         <div id="comment-section">
             <h2>Kolom Komentar</h2>
@@ -114,17 +101,17 @@
             footer.classList.toggle("dark-mode");
         }
     </script>
-
     <!-- Popup Info Beasiswa -->
-    <div id="popup-beasiswa" class="popup-beasiswa" style="display:none;">
-        <div class="popup-content">
-            <span class="close-btn" onclick="tutupPopupBeasiswa()">&times;</span>
-            <h2>Beasiswa Pelindo Prestasi 2025</h2>
-            <p>Beasiswa ini merupakan program bantuan pendidikan dari PT Pelindo untuk mahasiswa Universitas Sumatera Utara yang berprestasi.</p>
-            <p><strong>🗓️ Pendaftaran:</strong> Sampai 30 April 2025</p>
-            <p><strong>📌 Syarat:</strong> Mahasiswa aktif, IPK minimal 3.00, surat rekomendasi, dan dokumen pendukung lainnya.</p>
-            <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025" target="_blank">Kunjungi Situs Resmi</a>
-        </div>
+<div id="popup-beasiswa" class="popup-beasiswa" style="display:none;">
+    <div class="popup-content">
+        <span class="close-btn" onclick="tutupPopupBeasiswa()">&times;</span>
+        <h2>Beasiswa Pelindo Prestasi 2025</h2>
+        <p>Beasiswa ini merupakan program bantuan pendidikan dari PT Pelindo untuk mahasiswa Universitas Sumatera Utara yang berprestasi.</p>
+        <p><strong>🗓️ Pendaftaran:</strong> Sampai 30 April 2025</p>
+        <p><strong>📌 Syarat:</strong> Mahasiswa aktif, IPK minimal 3.00, surat rekomendasi, dan dokumen pendukung lainnya.</p>
+        <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025" target="_blank">Kunjungi Situs Resmi</a>
     </div>
+</div>
+
 </body>
 </html>
