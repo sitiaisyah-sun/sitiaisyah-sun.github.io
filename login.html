@@ -8,12 +8,101 @@
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
   <style>
+    /* Custom Colors */
+    :root {
+      --primary-color: #28a745; /* Green color for buttons and highlights */
+      --secondary-color: #f8f9fa; /* Light background */
+      --text-color: #333; /* Dark text for readability */
+      --button-hover: #218838; /* Darker green for button hover */
+    }
+
+    /* Global Style */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+    }
+
+    .container {
+      max-width: 800px;
+      margin-top: 30px;
+    }
+
+    .card {
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-body {
+      padding: 2rem;
+    }
+
+    h2 {
+      color: var(--primary-color);
+    }
+
+    /* Form Styles */
+    .form-control {
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      margin-bottom: 15px;
+    }
+
+    .form-control:focus {
+      border-color: var(--primary-color);
+    }
+
+    .btn {
+      border-radius: 5px;
+      padding: 12px;
+    }
+
+    .btn-success {
+      background-color: var(--primary-color);
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+    }
+
+    .btn:hover {
+      background-color: var(--button-hover);
+    }
+
+    .toggle-buttons p {
+      margin-top: 1rem;
+    }
+
     .hidden { display: none; }
-    .toggle-buttons { margin-bottom: 1rem; text-align: center; }
+
+    /* Centering content vertically and horizontally */
+    .d-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .min-vh-100 {
+      min-height: 100vh;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 767px) {
+      .container {
+        padding: 0 15px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- This is your main website content -->
+  <!-- Main Content Section -->
   <section class="d-flex align-items-center py-4 min-vh-100">
     <div class="container">
       <div class="row mb-5">
@@ -25,7 +114,7 @@
     </div>
   </section>
 
-  <!-- Firebase & Auth Forms -->
+  <!-- Firebase & Auth Forms Section -->
   <section class="d-flex align-items-center py-4 min-vh-100">
     <div class="container">
       <div class="row justify-content-center">
