@@ -13,9 +13,7 @@
             background-color: #121212;
             color: #ffffff;
         }
-
-        header.dark-mode,
-        footer.dark-mode {
+        header.dark-mode, footer.dark-mode {
             background-color: #1e1e1e;
         }
     </style>
@@ -23,11 +21,7 @@
 
 <body class="home-page">
     <script>
-        // Cek apakah user sudah login
-        const isLoggedIn = localStorage.getItem("isLoggedIn");
-        if (!isLoggedIn || isLoggedIn !== "true") {
-            window.location.href = "login.html";  // Redirect ke halaman login jika belum login
-        }
+        alert("Selamat datang di Perpustakaan Aisyah");
     </script>
 
     <button id="dark-mode-toggle" onclick="myFunction()">Dark Mode</button>
@@ -40,7 +34,6 @@
                 <li><a href="about.html">📖 Tentang Saya</a></li>
                 <li><a href="contact.html">✉ Hubungi Saya</a></li>
                 <li><a href="tabel.php">✉ Tabel Perkalian</a></li>
-                <li><a href="login.html" onclick="logoutUser()">🔑 Logout</a></li> <!-- Logout Link -->
             </ul>
         </nav>
     </header>
@@ -62,6 +55,37 @@
         <input type="text" id="search" placeholder="Cari buku..." style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px;">
 
         <div id="book-list"></div>
+
+        <!-- Info Beasiswa -->
+        <section id="berita">
+            <h2>Info Terbaru</h2>
+            <div class="berita-container">
+                <div class="berita-card">
+                    <h3>Beasiswa Pelindo Prestasi 2025</h3>
+                    <p>Universitas Sumatera Utara bekerja sama dengan PT Pelindo membuka pendaftaran beasiswa untuk mahasiswa berprestasi. Program ini mencakup bantuan pendidikan dan pengembangan diri.</p>
+                    <p><strong>Deadline:</strong> Cek segera karena kuota terbatas!</p>
+                    <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025" target="_blank">Baca Selengkapnya</a>
+                    <button onclick="tampilkanPopupBeasiswa()">Lihat Info Beasiswa</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="comment-section">
+            <h2>Kolom Komentar</h2>
+            <textarea id="comment-input" placeholder="Tulis komentar..." rows="4" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+            <button onclick="addComment()">Kirim</button>
+            <div id="comment-list" style="margin-top: 20px;"></div>
+        </div>
+
+        <div id="book-modal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modal-title"></h2>
+                <img id="modal-image" src="" alt="">
+                <p id="modal-author"></p>
+                <p id="modal-description"></p>
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -78,12 +102,27 @@
             footer.classList.toggle("dark-mode");
         }
 
-        // Logout function
-        function logoutUser() {
-            localStorage.setItem("isLoggedIn", "false");  // Set login state to false
-            window.location.href = "login.html";  // Redirect to login page
+        function tampilkanPopupBeasiswa() {
+            document.getElementById('popup-beasiswa').style.display = 'block';
+        }
+
+        function tutupPopupBeasiswa() {
+            document.getElementById('popup-beasiswa').style.display = 'none';
         }
     </script>
+
+    <!-- Popup Info Beasiswa -->
+    <div id="popup-beasiswa" class="popup-beasiswa" style="display:none;">
+        <div class="popup-content">
+            <span class="close-btn" onclick="tutupPopupBeasiswa()">&times;</span>
+            <h2>Beasiswa Pelindo Prestasi 2025</h2>
+            <p>Beasiswa ini merupakan program bantuan pendidikan dari PT Pelindo untuk mahasiswa Universitas Sumatera Utara yang berprestasi.</p>
+            <p><strong>🗓️ Pendaftaran:</strong> Sampai 30 April 2025</p>
+            <p><strong>📌 Syarat:</strong> Mahasiswa aktif, IPK minimal 3.00, surat rekomendasi, dan dokumen pendukung lainnya.</p>
+            <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025" target="_blank">Kunjungi Situs Resmi</a>
+        </div>
+    </div>
+
 </body>
 
 </html>
