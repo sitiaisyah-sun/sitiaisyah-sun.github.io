@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Perpustakaan Aisyah - Auth</title>
+  <title>Perpustakaan Aisyah</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/zephyr/bootstrap.min.css">
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
@@ -13,25 +13,30 @@
   </style>
 </head>
 <body>
+  <!-- This is your main website content -->
   <section class="d-flex align-items-center py-4 min-vh-100">
     <div class="container">
       <div class="row mb-5">
         <div class="col-md-8 col-xl-6 text-center mx-auto">
-          <h2 id="form-title">Daftar Akun Baru</h2>
-          <p class="w-lg-50">Silakan isi data untuk membuat akun atau login jika sudah punya akun.</p>
+          <h2>Selamat datang di Perpustakaan Aisyah</h2>
+          <p>Silakan login atau daftar untuk melanjutkan.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Firebase & Auth Forms -->
+  <section class="d-flex align-items-center py-4 min-vh-100">
+    <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-6">
           <div class="card shadow mb-5">
             <div class="card-body">
-
-              <!-- Toggle Button -->
               <div class="toggle-buttons">
                 <p id="toggle-text">Sudah punya akun? <a href="#" onclick="showLogin()">Login di sini</a></p>
               </div>
 
-              <!-- Register Form (default) -->
+              <!-- Register Form -->
               <form id="register-form">
                 <div class="mb-3"><input class="form-control" type="text" name="name" placeholder="Nama Lengkap" required /></div>
                 <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" required /></div>
@@ -45,7 +50,6 @@
                 <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" required /></div>
                 <div class="mb-3"><button class="btn btn-primary w-100" type="submit">Login</button></div>
               </form>
-
             </div>
           </div>
         </div>
@@ -53,7 +57,7 @@
     </div>
   </section>
 
-  <!-- Firebase & Logic -->
+  <!-- Firebase Logic -->
   <script>
     const firebaseConfig = {
       apiKey: "AIzaSyD9UCm5f7RY9thUG10Onx0Bp0WVL2CcMlk",
@@ -86,7 +90,6 @@
       toggleText.innerHTML = 'Sudah punya akun? <a href="#" onclick="showLogin()">Login di sini</a>';
     }
 
-    // Register
     registerForm.addEventListener('submit', function (e) {
       e.preventDefault();
       const email = registerForm.email.value;
@@ -99,7 +102,6 @@
         .catch(error => alert('Error: ' + error.message));
     });
 
-    // Login
     loginForm.addEventListener('submit', function (e) {
       e.preventDefault();
       const email = loginForm.email.value;
@@ -107,7 +109,7 @@
       firebase.auth().signInWithEmailAndPassword(email, password)
         .then(userCredential => {
           alert('Login berhasil! Selamat datang, ' + userCredential.user.email);
-          // window.location.href = 'dashboard.html'; // kalau mau redirect
+          window.location.href = 'dashboard.html'; // Ganti dengan halaman tujuan setelah login
         })
         .catch(error => alert('Login gagal: ' + error.message));
     });
