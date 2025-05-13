@@ -1,3 +1,4 @@
+
 /* ======== RESET UMUM ======== */
 * {
     margin: 0;
@@ -5,7 +6,7 @@
     box-sizing: border-box;
 }
 
-/* ======== UMUM ======== */
+/* ======== BODY ======== */
 body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
@@ -13,22 +14,20 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    text-align: center;
 }
 
-/* ======== HEADER DAN NAVIGASI ======== */
 header {
     background-color: #003300;
     color: #aaffaa;
     text-align: center;
     padding: 20px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Mengatur elemen dalam header agar vertikal */
+    align-items: center; /* Memastikan semua elemen tetap di tengah */
 }
 
 nav {
-    margin-top: 10px;
+    margin-top: 10px; /* Memberi jarak agar tidak menempel dengan judul */
 }
 
 nav ul {
@@ -55,74 +54,97 @@ nav a:hover {
     border-radius: 5px;
 }
 
-/* ======== KONTEN UTAMA ======== */
+/* ======== MAIN CONTENT ======== */
 main {
     flex-grow: 1;
     padding: 20px;
     width: 90%;
     max-width: 900px;
     margin: auto;
-    min-height: 60vh;
+    min-height: 60vh; /* Menjaga konten tidak terlalu pendek */
 }
 
-/* ======== BOX KONTEN KHUSUS ======== */
-.welcome-box,
-.form-container,
-.content-box,
-.berita-card {
+/* ======== HALAMAN BERANDA ======== */
+.home-page .welcome-box {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
     background-color: #f9f9f9;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 20px;
-    margin: 30px auto;
-}
-
-.welcome-box {
-    max-width: 700px;
     text-align: center;
 }
 
-.form-container,
-.content-box {
-    max-width: 600px;
+.home-page h2 {
+    color: #003300;
+}
+
+.home-page p {
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 /* ======== FORM KONTAK ======== */
-form {
+.contact-page .form-container {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-page form {
     display: flex;
     flex-direction: column;
 }
 
-label {
+.contact-page label {
     font-weight: bold;
     margin-top: 10px;
 }
 
-input, textarea {
+.contact-page input, 
+.contact-page textarea {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #ffffff;
-    color: #000000;
 }
 
-/* ======== TOMBOL UMUM ======== */
-button, .btn {
-    background: #007bff;
+.contact-page button {
+    background-color: #003300;
     color: white;
-    padding: 10px 15px;
     border: none;
-    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
-button:hover, .btn:hover {
-    background: #0056b3;
+.contact-page button:hover {
+    background-color: #005500;
 }
 
-/* ======== TABEL ======== */
+/* ======== HALAMAN ABOUT ======== */
+.about-page .content-box {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+.about-page p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ======== TABEL INFORMASI ======== */
 .info-table {
     width: 100%;
     border-collapse: collapse;
@@ -150,13 +172,13 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
-    height: 60px;
+    height: 60px; /* Ukuran tetap */
     position: relative;
     bottom: 0;
     width: 100%;
 }
 
-/* ======== RESPONSIF ======== */
+/* ======== RESPONSIVE DESIGN ======== */
 @media (max-width: 768px) {
     main {
         width: 95%;
@@ -167,19 +189,70 @@ footer {
         margin: 5px 0;
     }
 
-    .form-container,
-    .content-box,
-    .welcome-box {
+    .contact-page .form-container, 
+    .about-page .content-box, 
+    .home-page .welcome-box {
         width: 90%;
     }
 }
 
-/* ======== GALERI BUKU ======== */
-.book-gallery {
+/* ======== JAVASRICPT DESIGN ======== */
+
+.book-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease-in-out;
+}
+
+.book-item a:hover {
+    transform: scale(1.05);
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    margin: 10% auto;
+    width: 50%;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content img {
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#book-list {
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
     margin-top: 20px;
 }
 
@@ -188,60 +261,41 @@ footer {
     padding: 10px;
     border-radius: 10px;
     width: 200px;
-    text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.2s;
 }
 
 .book img {
-    width: 150px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.book:hover {
-    transform: scale(1.05);
-}
-
-/* ======== MODAL ======== */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
     width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.7);
-}
-
-.modal-content {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 20px;
     border-radius: 10px;
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
 }
 
-.modal-content img {
-    width: 150px;
-    margin: 10px 0;
+.book h3 {
+    font-size: 16px;
+    margin: 10px 0 5px;
 }
 
-.close {
-    float: right;
-    font-size: 24px;
+.book p {
+    font-size: 14px;
+    color: #666;
+}
+
+.book button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
-/* ======== KOMENTAR ======== */
+.book button:hover {
+    background: #0056b3;
+}
+
+/* ======== COMENT SECTION ======== */
 #comment-section {
     margin-top: 30px;
+    text-align: center;
     padding: 20px;
     background: #f5f5f5;
     border-radius: 8px;
@@ -257,11 +311,24 @@ footer {
     margin: 10px auto;
 }
 
+button {
+    background: #008CBA;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #005f73;
+}
+
 #comment-list {
     margin-top: 20px;
+    text-align: left;
     max-width: 600px;
     margin: auto;
-    text-align: left;
 }
 
 .comment {
@@ -272,7 +339,112 @@ footer {
     border: 1px solid #ddd;
 }
 
-/* ======== BERITA / BEASISWA ======== */
+/* ======== DARK MODE ======== */
+/* Gaya untuk dark mode */
+body.dark-mode {
+    background-color: #121212; /* Latar belakang gelap */
+    color: #000000; /* Teks putih */
+}
+
+/* Gaya untuk elemen lain dalam dark mode */
+header.dark-mode, footer.dark-mode {
+    background-color: #1e1e1e; /* Latar belakang header dan footer */
+    color: #ffffff; /* Teks putih di header dan footer */
+}
+
+/* Gaya untuk link dalam dark mode */
+a {
+    color: #1e90ff; /* Warna biru untuk link */
+}
+
+a:hover {
+    color: #87cefa; /* Warna biru muda saat hover */
+}
+
+/* Gaya untuk textarea dan input dalam dark mode */
+textarea, input {
+    background-color: #333; /* Latar belakang gelap untuk input */
+    color: #ffffff; /* Teks putih untuk input */
+    border: 1px solid #555; /* Border yang lebih terang */
+}
+.gambar-buku {
+    width: 200px;
+    height: 300px; /* Sesuaikan dengan ukuran gambar Laut Bercerita */
+    object-fit: cover;
+}
+
+.book-gallery {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.book {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.book img {
+  width: 150px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.book:hover {
+  transform: scale(1.05);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.modal-content img {
+  width: 150px;
+  margin: 10px 0;
+}
+
+.modal-buttons .btn {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 5px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.close-btn {
+  background-color: #dc3545;
+}
+
+.close {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+<!-- Info Beasiswa -->
 #berita {
     margin-top: 40px;
     padding: 20px;
@@ -293,59 +465,50 @@ footer {
     gap: 20px;
 }
 
+.berita-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 400px;
+    background-color: #ffffff;
+}
+
 .berita-card h3 {
     color: #1a237e;
+    margin-bottom: 10px;
 }
 
 .berita-card a {
     color: #1565c0;
     text-decoration: underline;
 }
-
-/* ======== DARK MODE ======== */
-body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
+/* Popup Beasiswa */
+.popup-beasiswa {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
 }
 
-header.dark-mode,
-footer.dark-mode {
-    background-color: #1e1e1e;
-    color: #ffffff;
+.popup-content {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-input.dark-mode,
-textarea.dark-mode {
-    background-color: #333;
-    color: #ffffff;
-    border: 1px solid #555;
-}
-
-.welcome-box.dark-mode,
-.form-container.dark-mode,
-.content-box.dark-mode,
-.comment.dark-mode,
-.berita-card.dark-mode,
-.book.dark-mode {
-    background-color: #1f1f1f;
-    color: #ffffff;
-    border: 1px solid #444;
-}
-
-.info-table.dark-mode th {
-    background-color: #2a2a2a;
-    color: #ffffff;
-}
-
-.info-table.dark-mode td {
-    background-color: #1a1a1a;
-}
-
-/* Link dalam dark mode */
-a {
-    color: #1e90ff;
-}
-
-a:hover {
-    color: #87cefa;
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
 }
