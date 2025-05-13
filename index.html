@@ -4,12 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Aisyah</title>
-    <script>
-        // Proteksi: redirect ke login jika belum login
-        if (localStorage.getItem("loggedIn") !== "true") {
-            window.location.href = "login.html";
-        }
-    </script>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -21,6 +15,19 @@
         header.dark-mode, footer.dark-mode {
             background-color: #1e1e1e;
         }
+        .login-button {
+            margin-top: 10px;
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        .login-button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body class="home-page">
@@ -30,9 +37,6 @@
 
     <button id="dark-mode-toggle" onclick="myFunction()">Dark Mode</button>
 
-    <!-- Logout button -->
-    <button onclick="logout()" style="float: right; margin: 10px; background: red; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer;">Logout</button>
-
     <header>
         <h1>Perpustakaan Aisyah</h1>
         <nav>
@@ -41,6 +45,7 @@
                 <li><a href="about.html">📖 Tentang Saya</a></li>
                 <li><a href="contact.html">✉ Hubungi Saya</a></li>
                 <li><a href="tabel.php">✉ Tabel Perkalian</a></li>
+                <li><a href="login.html" class="login-button">🔐 Login</a></li>
             </ul>
         </nav>
     </header>
@@ -108,12 +113,6 @@
             header.classList.toggle("dark-mode");
             footer.classList.toggle("dark-mode");
         }
-
-        // Fungsi Logout
-        function logout() {
-            localStorage.removeItem("loggedIn");
-            window.location.href = "login.html";
-        }
     </script>
 
     <!-- Popup Info Beasiswa -->
@@ -127,6 +126,5 @@
             <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025" target="_blank">Kunjungi Situs Resmi</a>
         </div>
     </div>
-
 </body>
 </html>
