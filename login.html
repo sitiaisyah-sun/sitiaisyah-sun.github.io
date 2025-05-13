@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 
@@ -13,6 +12,9 @@
     <link rel="stylesheet" href="assets/css/faq2.compiled.css">
     <link rel="stylesheet" href="assets/css/Features-Cards-icons.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
 </head>
 
 <body>
@@ -20,7 +22,7 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-8 col-xl-6 text-center mx-auto">
-                    <h2>Log in</h2>
+                    <h2 id="form-title">Log in</h2>
                     <p class="w-lg-50">Curae hendrerit donec commodo hendrerit egestas tempus, turpis facilisis nostra nunc. Vestibulum dui eget ultrices.</p>
                 </div>
             </div>
@@ -28,20 +30,110 @@
                 <div class="col-md-7 col-lg-6 col-xl-5">
                     <div class="card mb-5 shadow-none">
                         <div class="card-body d-flex flex-column align-items-center">
-                            <div class="bs-icon-xl bs-icon-circle bs-icon-primary bs-icon my-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person">
+                            <div class="bs-icon-xl bs-icon-circle bs-icon-primary bs-icon my-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person">
                                     <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z"></path>
-                                </svg></div>
-                            <form class="text-center w-100" method="post">
-                                <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-                                <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+                                </svg>
+                            </div>
+
+                            <!-- Toggle buttons for Login / Register -->
+                            <div class="toggle-buttons mb-4" style="display: flex; justify-content: center; gap: 10px;">
+                                <button class="btn btn-outline-primary" onclick="showLogin()">Login</button>
+                                <button class="btn btn-outline-secondary" onclick="showRegister()">Register</button>
+                            </div>
+
+                            <!-- Login Form -->
+                            <form id="login-form" class="w-100">
+                                <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" required /></div>
+                                <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" required /></div>
                                 <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Login</button></div>
                             </form>
+
+                            <!-- Register Form (Initially hidden) -->
+                            <form id="register-form" class="w-100 hidden">
+                                <div class="mb-3"><input class="form-control" type="text" name="name" placeholder="Full Name" required /></div>
+                                <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" required /></div>
+                                <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" required /></div>
+                                <div class="mb-3"><button class="btn btn-success d-block w-100" type="submit">Register</button></div>
+                            </form>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        const title = document.getElementById('form-title');
+
+        function showLogin() {
+            loginForm.classList.remove('hidden');
+            registerForm.classList.add('hidden');
+            title.textContent = 'Login';
+        }
+
+        function showRegister() {
+            loginForm.classList.add('hidden');
+            registerForm.classList.remove('hidden');
+            title.textContent = 'Register';
+        }
+
+        // Handle Login
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const email = loginForm.querySelector('input[name="email"]').value;
+            const password = loginForm.querySelector('input[name="password"]').value;
+
+            auth.signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    alert('Login successful! Welcome ' + user.email);
+                    // Redirect to another page
+                    // window.location.href = "admin.html";
+                })
+                .catch((error) => {
+                    alert('Error: ' + error.message);
+                });
+        });
+
+        // Handle Registration
+        registerForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = registerForm.querySelector('input[name="name"]').value;
+            const email = registerForm.querySelector('input[name="email"]').value;
+            const password = registerForm.querySelector('input[name="password"]').value;
+
+            auth.createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    alert('Registration successful! Welcome ' + user.email);
+                    showLogin(); // Show login form after registration
+                })
+                .catch((error) => {
+                    alert('Error: ' + error.message);
+                });
+        });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
