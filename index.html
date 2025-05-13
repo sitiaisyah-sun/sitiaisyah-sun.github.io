@@ -17,14 +17,27 @@
             background-color: #1e1e1e;
         }
     </style>
+
+    <!-- Cek Login -->
+    <script>
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+        if (!isLoggedIn || isLoggedIn !== "true") {
+            window.location.href = "login.html";
+        }
+    </script>
 </head>
 
 <body class="home-page">
+
     <script>
         alert("Selamat datang di Perpustakaan Aisyah");
     </script>
 
+    <!-- Tombol dark mode -->
     <button id="dark-mode-toggle" onclick="myFunction()">Dark Mode</button>
+
+    <!-- Tombol Logout -->
+    <button onclick="logoutUser()" style="float: right; margin: 10px;">Logout</button>
 
     <header>
         <h1>Perpustakaan Aisyah</h1>
@@ -34,7 +47,7 @@
                 <li><a href="about.html">📖 Tentang Saya</a></li>
                 <li><a href="contact.html">✉ Hubungi Saya</a></li>
                 <li><a href="tabel.php">✉ Tabel Perkalian</a></li>
-                <li><a href="login.html">🔑 Login</a></li> <!-- Link Login -->
+                <!-- Login link dihapus karena sudah otomatis login -->
             </ul>
         </nav>
     </header>
@@ -42,28 +55,22 @@
     <main>
         <div class="welcome-box">
             <h2><i class="fas fa-smile"></i> Hai, Selamat Datang</h2>
-            <p>Perkenalkan, saya <b>Siti Aisyah</b>. Ini adalah perpustakaan pribadi saya yang berisi koleksi buku favorit dan tugas akademik yang saya input ke dalam <i>homepage</i>.</p>
-            <p>Perpustakaan ini memiliki berbagai jenis buku, mulai dari fiksi, non-fiksi, hingga buku akademik untuk membantu proses belajar. Saya juga mengoleksi artikel dan jurnal dengan berbagai topik menarik.</p>
-            <p>Saya berencana menambahkan fitur rekomendasi buku, ulasan, dan informasi acara literasi mendatang. Harapan saya, perpustakaan ini bisa menjadi sumber inspirasi dan pengetahuan bagi para pengunjung.</p>
-            <p>Silakan jelajahi koleksi saya dan temukan buku yang menarik! Jika ada pertanyaan atau ingin berbagi rekomendasi, hubungi saya melalui halaman kontak.</p>
+            <p>Perkenalkan, saya <b>Siti Aisyah</b>. Ini adalah perpustakaan pribadi saya...</p>
             <p>Saya mengambil referensi untuk web saya dari perpustakaan UI. Silahkan cek juga perpustakaan UI ya</p>
             <a href="https://lib.ui.ac.id/" target="_blank">Perpustakaan UI</a>
         </div>
 
         <h3>Cari Novel</h3>
         <p>Carilah buku yang ingin Anda cari.</p>
-
         <input type="text" id="search" placeholder="Cari buku..." style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px;">
-
         <div id="book-list"></div>
 
-        <!-- Info Beasiswa -->
         <section id="berita">
             <h2>Info Terbaru</h2>
             <div class="berita-container">
                 <div class="berita-card">
                     <h3>Beasiswa Pelindo Prestasi 2025</h3>
-                    <p>Universitas Sumatera Utara bekerja sama dengan PT Pelindo membuka pendaftaran beasiswa untuk mahasiswa berprestasi. Program ini mencakup bantuan pendidikan dan pengembangan diri.</p>
+                    <p>Universitas Sumatera Utara bekerja sama dengan PT Pelindo membuka pendaftaran...</p>
                     <p><strong>Deadline:</strong> Cek segera karena kuota terbatas!</p>
                     <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025" target="_blank">Baca Selengkapnya</a>
                     <button onclick="tampilkanPopupBeasiswa()">Lihat Info Beasiswa</button>
@@ -93,6 +100,7 @@
         <p>&copy; 2025 Perpustakaan Aisyah. All rights reserved.</p>
     </footer>
 
+    <!-- Script untuk Dark Mode dan Logout -->
     <script>
         function myFunction() {
             var element = document.body;
@@ -110,6 +118,11 @@
         function tutupPopupBeasiswa() {
             document.getElementById('popup-beasiswa').style.display = 'none';
         }
+
+        function logoutUser() {
+            localStorage.removeItem("isLoggedIn");
+            window.location.href = "login.html";
+        }
     </script>
 
     <!-- Popup Info Beasiswa -->
@@ -117,9 +130,9 @@
         <div class="popup-content">
             <span class="close-btn" onclick="tutupPopupBeasiswa()">&times;</span>
             <h2>Beasiswa Pelindo Prestasi 2025</h2>
-            <p>Beasiswa ini merupakan program bantuan pendidikan dari PT Pelindo untuk mahasiswa Universitas Sumatera Utara yang berprestasi.</p>
+            <p>Beasiswa ini merupakan program bantuan pendidikan dari PT Pelindo...</p>
             <p><strong>🗓️ Pendaftaran:</strong> Sampai 30 April 2025</p>
-            <p><strong>📌 Syarat:</strong> Mahasiswa aktif, IPK minimal 3.00, surat rekomendasi, dan dokumen pendukung lainnya.</p>
+            <p><strong>📌 Syarat:</strong> Mahasiswa aktif, IPK minimal 3.00, dll.</p>
             <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025" target="_blank">Kunjungi Situs Resmi</a>
         </div>
     </div>
