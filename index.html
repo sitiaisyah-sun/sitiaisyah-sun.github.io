@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +7,7 @@
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <style>
         body.dark-mode {
             background-color: #121212;
@@ -18,25 +18,50 @@
         }
     </style>
 
-    <!-- Cek Login -->
-    <script>
-        const isLoggedIn = localStorage.getItem("isLoggedIn");
-        if (!isLoggedIn || isLoggedIn !== "true") {
-            window.location.href = "login.html";
-        }
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "API_KEY_MU",
+            authDomain: "PROJECT_ID.firebaseapp.com",
+            projectId: "PROJECT_ID",
+            storageBucket: "PROJECT_ID.appspot.com",
+            messagingSenderId: "SENDER_ID",
+            appId: "APP_ID"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Cek status login saat halaman dimuat
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                window.location.href = "login.html";
+            } else {
+                console.log("Pengguna sudah login:", user.email);
+            }
+        });
+
+        // Fungsi Logout
+        window.logoutUser = function () {
+            signOut(auth).then(() => {
+                console.log("Logout berhasil");
+                window.location.href = "login.html";
+            }).catch((error) => {
+                console.error("Gagal logout:", error.message);
+            });
+        };
     </script>
 </head>
 
 <body class="home-page">
-
     <script>
         alert("Selamat datang di Perpustakaan Aisyah");
     </script>
 
-    <!-- Tombol dark mode -->
     <button id="dark-mode-toggle" onclick="myFunction()">Dark Mode</button>
-
-    <!-- Tombol Logout -->
     <button onclick="logoutUser()" style="float: right; margin: 10px;">Logout</button>
 
     <header>
@@ -47,7 +72,6 @@
                 <li><a href="about.html">📖 Tentang Saya</a></li>
                 <li><a href="contact.html">✉ Hubungi Saya</a></li>
                 <li><a href="tabel.php">✉ Tabel Perkalian</a></li>
-                <!-- Login link dihapus karena sudah otomatis login -->
             </ul>
         </nav>
     </header>
@@ -100,7 +124,7 @@
         <p>&copy; 2025 Perpustakaan Aisyah. All rights reserved.</p>
     </footer>
 
-    <!-- Script untuk Dark Mode dan Logout -->
+    <!-- Script Dark Mode & Popup -->
     <script>
         function myFunction() {
             var element = document.body;
@@ -118,11 +142,6 @@
         function tutupPopupBeasiswa() {
             document.getElementById('popup-beasiswa').style.display = 'none';
         }
-
-        function logoutUser() {
-            localStorage.removeItem("isLoggedIn");
-            window.location.href = "login.html";
-        }
     </script>
 
     <!-- Popup Info Beasiswa -->
@@ -136,7 +155,5 @@
             <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025" target="_blank">Kunjungi Situs Resmi</a>
         </div>
     </div>
-
 </body>
-
 </html>
