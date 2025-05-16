@@ -188,58 +188,21 @@ function tutupPopupBeasiswa() {
 // ========================
 // 8. Cookie
 // ========================
-window.onload = function () {
-  if (!getCookie("acceptedCookies")) {
-    document.getElementById("cookie-bar").style.display = "flex";
+<script>
+  function acceptCookies() {
+    document.getElementById("cookieConsent").style.display = "none";
+    localStorage.setItem("cookiesAccepted", "true");
   }
 
-  const user = getCookie("username");
-  if (user) {
-    document.getElementById("cookie-info").innerText = `Halo, ${decodeURIComponent(user)}!`;
+  function manageCookies() {
+    alert("Fitur kelola cookie belum tersedia. Silakan sesuaikan dengan halaman pengaturan privasi atau preferensi cookie.");
+    // Kamu bisa arahkan ke halaman lain, contoh:
+    // window.location.href = "/kelola-cookie.html";
   }
-};
 
-function acceptAllCookies() {
-  setCookie("acceptedCookies", "true", 30);
-  document.getElementById("cookie-bar").style.display = "none";
-  alert("Cookie telah diterima.");
-}
-
-function showCookieSettings() {
-  document.getElementById("cookie-settings").style.display = "block";
-}
-
-function saveCookie() {
-  const name = document.getElementById("cookie-name").value.trim();
-  if (name) {
-    setCookie("username", name, 7);
-    document.getElementById("cookie-info").innerText = `Halo, ${name}! Cookie Anda disimpan.`;
-    alert("Cookie disimpan.");
-  } else {
-    alert("Masukkan nama terlebih dahulu.");
-  }
-}
-
-function showCookie() {
-  const user = getCookie("username");
-  alert(user ? `Cookie Anda: ${decodeURIComponent(user)}` : "Cookie tidak ditemukan.");
-}
-
-function deleteCookie() {
-  setCookie("username", "", -1);
-  document.getElementById("cookie-info").innerText = "Cookie telah dihapus.";
-  alert("Cookie dihapus.");
-}
-
-function setCookie(name, value, days) {
-  const d = new Date();
-  d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
-  const expires = "expires=" + d.toUTCString();
-  document.cookie = `${name}=${encodeURIComponent(value)}; ${expires}; path=/`;
-}
-
-function getCookie(name) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(";").shift();
-}
+  window.onload = function () {
+    if (localStorage.getItem("cookiesAccepted") === "true") {
+      document.getElementById("cookieConsent").style.display = "none";
+    }
+  };
+</script>
