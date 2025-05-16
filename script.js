@@ -178,3 +178,47 @@ function tampilkanPopupBeasiswa() {
 function tutupPopupBeasiswa() {
     document.getElementById("popup-beasiswa").style.display = "none";
 }
+
+// ========================
+// 8. Cookie
+// ========================
+
+function setCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + d.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+function getCookie(name) {
+    const cname = name + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i].trim();
+        if (c.indexOf(cname) === 0) {
+            return c.substring(cname.length, c.length);
+        }
+    }
+    return "";
+}
+
+window.onload = function () {
+    const username = getCookie("username");
+    const welcome = document.getElementById("welcome-message");
+    const form = document.getElementById("nameForm");
+
+    if (username !== "") {
+        welcome.textContent = "Selamat datang kembali, " + username + "!";
+        form.style.display = "none";
+    }
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const inputName = document.getElementById("name").value;
+        setCookie("username", inputName, 7);
+        welcome.textContent = "Halo, " + inputName + "! Nama Anda telah disimpan.";
+        form.style.display = "none";
+    });
+};
+
