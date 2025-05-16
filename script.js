@@ -183,42 +183,64 @@ function tutupPopupBeasiswa() {
 // 8. Cookie
 // ========================
 
-function setCookie(name, value, days) {
-    const d = new Date();
-    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
-    const expires = "expires=" + d.toUTCString();
-    document.cookie = name + "=" + value + ";" + expires + ";path=/";
-}
-
-function getCookie(name) {
-    const cname = name + "=";
-    const decodedCookie = decodeURIComponent(document.cookie);
-    const ca = decodedCookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-        let c = ca[i].trim();
-        if (c.indexOf(cname) === 0) {
-            return c.substring(cname.length, c.length);
-        }
-    }
-    return "";
-}
-
+// Cek notifikasi cookie di awal
 window.onload = function () {
-    const username = getCookie("username");
-    const welcome = document.getElementById("welcome-message");
-    const form = document.getElementById("nameForm");
+  if (!getCookie("acceptedCookies")) {
+    document.getElementById("cookie-notice").style.display = "block";
+  }
 
-    if (username !== "") {
-        welcome.textContent = "Selamat datang kembali, " + username + "!";
-        form.style.display = "none";
-    }
-
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const inputName = document.getElementById("name").value;
-        setCookie("username", inputName, 7);
-        welcome.textContent = "Halo, " + inputName + "! Nama Anda telah disimpan.";
-        form.style.display = "none";
-    });
+  const savedName = getCookie("username");
+  if (savedName) {
+    document.getElementById("cookie-info").innerText = `Halo, ${decodeURIComponent(savedName)}!`;
+  }
 };
 
+// Fungsi menerima cookie notice
+function acceptCookieNotice() {
+  setCookie("acceptedCookies", "true", 30);
+  document.getElementById("cookie-notice").style.display = "none";
+}
+
+// Fungsi menyimpan cookie
+function saveCookie() {
+  const name = document.getElementById("cookie-name").value.trim();
+  if (name) {
+    setCookie("username", name, 7);
+    alert("Cookie telah disimpan!");
+    document.getElementById("cookie-info").innerText = `Halo, ${name}! Cookie Anda disimpan.`;
+  } else {
+    alert("Silakan masukkan nama.");
+  }
+}
+
+// Fungsi menampilkan cookie
+function showCookie() {
+  const user = getCookie("username");
+  if (user) {
+    alert(`Cookie Anda: ${decodeURIComponent(user)}`);
+  } else {
+    alert("Tidak ada cookie disimpan.");
+  }
+}
+
+// Fungsi menghapus cookie
+function deleteCookie() {
+  document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  alert("Cookie telah dihapus.");
+  document.getElementById("cookie-info").innerText = "Cookie dihapus.";
+}
+
+// Fungsi mengambil cookie
+function getCookie(name) {
+  const value = "; " + document.cookie;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(";").shift();
+}
+
+// Fungsi menyetel cookie
+function setCookie(name, value, days) {
+  const d = new Date();
+  d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+  const expires = "expires=" + d.toUTCString();
+  document.cookie = `${name}=${encodeURIComponent(value)};${expires};path=/`;
+}
