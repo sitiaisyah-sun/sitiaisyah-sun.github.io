@@ -13,10 +13,10 @@ function ubahJudul() {
 // 2. Cuaca dengan OpenWeatherMap
 // ========================
 async function getWeather() {
-    const apiKey = 'YOUR_API_KEY'; // Ganti dengan API Key OpenWeatherMap
+    const apiKey = '81fe1892a98337062a0e70074a68921c'; // Ganti dengan API Key OpenWeatherMap
     const city = document.getElementById('city').value;
     if (!city) {
-        alert("Masukkan nama kota terlebih dahulu");
+        alert("Medan");
         return;
     }
 
@@ -168,6 +168,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Tampilkan buku awal
     displayBooks();
+
+    // Inisialisasi tombol cuaca (jika elemen ada)
+    const weatherButton = document.getElementById("weather-btn");
+    if (weatherButton) {
+        weatherButton.addEventListener("click", getWeather);
+    }
 });
 
 /* Popup Beasiswa */
@@ -182,7 +188,6 @@ function tutupPopupBeasiswa() {
 // ========================
 // 8. Cookie
 // ========================
-
 window.onload = function () {
   if (!getCookie("acceptedCookies")) {
     document.getElementById("cookie-bar").style.display = "flex";
