@@ -212,9 +212,9 @@ function saveCookieSettings() {
   document.getElementById("cookie-banner").style.display = "none";
 }
 
-window.onload = function () {
+window.addEventListener("load", () => {
   const consent = localStorage.getItem("cookieConsent");
   if (!consent) {
     document.getElementById("cookie-banner").style.display = "flex";
   }
-};
+});
