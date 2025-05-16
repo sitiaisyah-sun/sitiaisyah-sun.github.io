@@ -482,3 +482,58 @@ input {
 .cookie-consent button:hover {
   background-color: #77cc77;
 }
+
+
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+header.dark-mode,
+footer.dark-mode {
+    background-color: #1e1e1e;
+}
+
+/* ======== Cuaca ======== */
+
+/* Styling untuk cuaca */
+#weather-section {
+    padding: 15px;
+    background: #f0f0f0;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#weather-section input {
+    padding: 8px;
+    width: 220px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#weather-section button {
+    padding: 8px 12px;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#weather-section button:hover {
+    background-color: #0056b3;
+}
+
+#weather-result {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+/* Tambahan styling lain yang mungkin sudah ada di style.css */
