@@ -123,15 +123,27 @@
             <p><strong>📌 Syarat:</strong> Mahasiswa aktif, IPK minimal 3.00, surat rekomendasi, dan dokumen pendukung lainnya.</p>
             <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025" target="_blank">Kunjungi Situs Resmi</a>
         </div>
-        
-    <div class="cookie-consent" id="cookieConsent">
-  <p>Website ini menggunakan cookie untuk meningkatkan pengalaman pengguna.</p>
+    </div>
+<!-- Cookie Settings Section -->
+<section id="cookie-settings" class="cookie-settings" style="display: none;">
+  <h2>Pengaturan Cookie</h2>
+  <input type="text" id="cookie-name" placeholder="Nama Anda">
+  <button onclick="saveCookie()">Simpan</button>
+  <button onclick="showCookie()">Lihat Cookie</button>
+  <button onclick="deleteCookie()">Hapus Cookie</button>
+  <p id="cookie-info"></p>
+</section>
+
+<!-- Cookie Bar -->
+<div id="cookie-bar" class="cookie-bar">
+  <p>Website ini menggunakan cookie untuk meningkatkan pengalaman Anda.</p>
   <div class="cookie-buttons">
-    <button onclick="acceptCookies()">Saya Mengerti</button>
-    <button onclick="manageCookies()">Kelola Cookie</button>
+    <button onclick="acceptAllCookies()">Terima Semua</button>
+    <button onclick="showCookieSettings()">Kelola</button>
   </div>
 </div>
-    
+
+
 </body>
 
 </html>
