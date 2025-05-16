@@ -183,7 +183,6 @@ function tutupPopupBeasiswa() {
 // 8. Cookie
 // ========================
 
-// Munculkan bar jika belum menerima cookie
 window.onload = function () {
   if (!getCookie("acceptedCookies")) {
     document.getElementById("cookie-bar").style.display = "flex";
@@ -195,19 +194,16 @@ window.onload = function () {
   }
 };
 
-// Tombol: Terima Semua Cookie
 function acceptAllCookies() {
   setCookie("acceptedCookies", "true", 30);
   document.getElementById("cookie-bar").style.display = "none";
   alert("Cookie telah diterima.");
 }
 
-// Tombol: Tampilkan pengaturan cookie
 function showCookieSettings() {
   document.getElementById("cookie-settings").style.display = "block";
 }
 
-// Simpan cookie
 function saveCookie() {
   const name = document.getElementById("cookie-name").value.trim();
   if (name) {
@@ -219,20 +215,17 @@ function saveCookie() {
   }
 }
 
-// Tampilkan cookie
 function showCookie() {
   const user = getCookie("username");
   alert(user ? `Cookie Anda: ${decodeURIComponent(user)}` : "Cookie tidak ditemukan.");
 }
 
-// Hapus cookie
 function deleteCookie() {
   setCookie("username", "", -1);
   document.getElementById("cookie-info").innerText = "Cookie telah dihapus.";
   alert("Cookie dihapus.");
 }
 
-// Utilitas: set dan get cookie
 function setCookie(name, value, days) {
   const d = new Date();
   d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
