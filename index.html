@@ -2,21 +2,14 @@
 <html lang="id">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Perpustakaan Aisyah</title>
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <style>
-        body.dark-mode {
-            background-color: #121212;
-            color: #ffffff;
-        }
-        header.dark-mode, footer.dark-mode {
-            background-color: #1e1e1e;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
 </head>
 
 <body class="home-page">
@@ -28,33 +21,47 @@
 
     <header>
         <h1>Perpustakaan Aisyah</h1>
-       <nav>
-  <ul>
-    <li><a href="index.html" class="tooltip active" data-tooltip="Kembali ke halaman utama">🏠 Beranda</a></li>
-    <li><a href="about.html" class="tooltip" data-tooltip="Pelajari lebih lanjut tentang saya">📖 Tentang Saya</a></li>
-    <li><a href="contact.html" class="tooltip" data-tooltip="Hubungi kami untuk pertanyaan">✉ Hubungi Saya</a></li>
-    <li><a href="tabel.php">✉ Tabel Perkalian</a></li>
-    <li><a href="login.html">🔑 Login</a></li>
-  </ul>
-</nav>
-
+        <nav>
+            <ul>
+                <li><a href="index.html" class="tooltip active" data-tooltip="Kembali ke halaman utama">🏠 Beranda</a></li>
+                <li><a href="about.html" class="tooltip" data-tooltip="Pelajari lebih lanjut tentang saya">📖 Tentang Saya</a></li>
+                <li><a href="contact.html" class="tooltip" data-tooltip="Hubungi kami untuk pertanyaan">✉ Hubungi Saya</a></li>
+                <li><a href="tabel.php">✉ Tabel Perkalian</a></li>
+                <li><a href="login.html">🔑 Login</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
         <div class="welcome-box">
             <h2><i class="fas fa-smile"></i> Hai, Selamat Datang</h2>
-            <p>Perkenalkan, saya <b>Siti Aisyah</b>. Ini adalah perpustakaan pribadi saya yang berisi koleksi buku favorit dan tugas akademik yang saya input ke dalam <i>homepage</i>.</p>
-            <p>Perpustakaan ini memiliki berbagai jenis buku, mulai dari fiksi, non-fiksi, hingga buku akademik untuk membantu proses belajar. Saya juga mengoleksi artikel dan jurnal dengan berbagai topik menarik.</p>
-            <p>Saya berencana menambahkan fitur rekomendasi buku, ulasan, dan informasi acara literasi mendatang. Harapan saya, perpustakaan ini bisa menjadi sumber inspirasi dan pengetahuan bagi para pengunjung.</p>
-            <p>Silakan jelajahi koleksi saya dan temukan buku yang menarik! Jika ada pertanyaan atau ingin berbagi rekomendasi, hubungi saya melalui halaman kontak.</p>
-            <p>Saya mengambil referensi untuk web saya dari perpustakaan UI. Silahkan cek juga perpustakaan UI ya</p>
+            <p>
+                Perkenalkan, saya <b>Siti Aisyah</b>. Ini adalah perpustakaan pribadi saya yang berisi koleksi buku favorit dan tugas akademik yang saya input ke dalam <i>homepage</i>.
+            </p>
+            <p>
+                Perpustakaan ini memiliki berbagai jenis buku, mulai dari fiksi, non-fiksi, hingga buku akademik untuk membantu proses belajar. Saya juga mengoleksi artikel dan jurnal dengan berbagai topik menarik.
+            </p>
+            <p>
+                Saya berencana menambahkan fitur rekomendasi buku, ulasan, dan informasi acara literasi mendatang. Harapan saya, perpustakaan ini bisa menjadi sumber inspirasi dan pengetahuan bagi para pengunjung.
+            </p>
+            <p>
+                Silakan jelajahi koleksi saya dan temukan buku yang menarik! Jika ada pertanyaan atau ingin berbagi rekomendasi, hubungi saya melalui halaman kontak.
+            </p>
+            <p>
+                Saya mengambil referensi untuk web saya dari perpustakaan UI. Silahkan cek juga perpustakaan UI ya
+            </p>
             <a href="https://lib.ui.ac.id/" target="_blank">Perpustakaan UI</a>
         </div>
-        
+
         <h3>Cari Novel</h3>
         <p>Carilah buku yang ingin Anda cari.</p>
 
-        <input type="text" id="search" placeholder="Cari buku..." style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px;">
+        <input
+          type="text"
+          id="search"
+          placeholder="Cari buku..."
+          style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px;"
+        />
 
         <div id="book-list"></div>
 
@@ -64,9 +71,13 @@
             <div class="berita-container">
                 <div class="berita-card">
                     <h3>Beasiswa Pelindo Prestasi 2025</h3>
-                    <p>Universitas Sumatera Utara bekerja sama dengan PT Pelindo membuka pendaftaran beasiswa untuk mahasiswa berprestasi. Program ini mencakup bantuan pendidikan dan pengembangan diri.</p>
+                    <p>
+                        Universitas Sumatera Utara bekerja sama dengan PT Pelindo membuka pendaftaran beasiswa untuk mahasiswa berprestasi. Program ini mencakup bantuan pendidikan dan pengembangan diri.
+                    </p>
                     <p><strong>Deadline:</strong> Cek segera karena kuota terbatas!</p>
-                    <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025" target="_blank">Baca Selengkapnya</a>
+                    <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025" target="_blank"
+                      >Baca Selengkapnya</a
+                    >
                     <button onclick="tampilkanPopupBeasiswa()">Lihat Info Beasiswa</button>
                 </div>
             </div>
@@ -74,115 +85,75 @@
 
         <div id="comment-section">
             <h2>Kolom Komentar</h2>
-            <textarea id="comment-input" placeholder="Tulis komentar..." rows="4" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+            <textarea
+              id="comment-input"
+              placeholder="Tulis komentar..."
+              rows="4"
+              style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"
+            ></textarea>
             <button onclick="addComment()">Kirim</button>
             <div id="comment-list" style="margin-top: 20px;"></div>
         </div>
 
-        <div id="book-modal" class="modal" style="display:none;">
+        <div id="book-modal" class="modal" style="display: none;">
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
                 <h2 id="modal-title"></h2>
-                <img id="modal-image" src="" alt="">
+                <img id="modal-image" src="" alt="" />
                 <p id="modal-author"></p>
                 <p id="modal-description"></p>
             </div>
         </div>
     </main>
 
+    <!-- Bagian cuaca ditaruh di atas footer -->
+    <section id="weather-section">
+        <h2>Cek Cuaca Kota Anda</h2>
+        <input type="text" id="city" placeholder="Masukkan nama kota" />
+        <button onclick="getWeather()">Cek Cuaca</button>
+        <div id="weather-result"></div>
+    </section>
+
     <footer>
         <p>&copy; 2025 Perpustakaan Aisyah. All rights reserved.</p>
     </footer>
 
-    <script>
-        function myFunction() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
-            var header = document.querySelector("header");
-            var footer = document.querySelector("footer");
-            header.classList.toggle("dark-mode");
-            footer.classList.toggle("dark-mode");
-        }
-
-        function tampilkanPopupBeasiswa() {
-            document.getElementById('popup-beasiswa').style.display = 'block';
-        }
-
-        function tutupPopupBeasiswa() {
-            document.getElementById('popup-beasiswa').style.display = 'none';
-        }
-    </script>
-
     <!-- Popup Info Beasiswa -->
-    <div id="popup-beasiswa" class="popup-beasiswa" style="display:none;">
+    <div id="popup-beasiswa" class="popup-beasiswa" style="display: none;">
         <div class="popup-content">
             <span class="close-btn" onclick="tutupPopupBeasiswa()">&times;</span>
             <h2>Beasiswa Pelindo Prestasi 2025</h2>
-            <p>Beasiswa ini merupakan program bantuan pendidikan dari PT Pelindo untuk mahasiswa Universitas Sumatera Utara yang berprestasi.</p>
+            <p>
+                Beasiswa ini merupakan program bantuan pendidikan dari PT Pelindo untuk mahasiswa Universitas Sumatera Utara yang berprestasi.
+            </p>
             <p><strong>🗓️ Pendaftaran:</strong> Sampai 30 April 2025</p>
-            <p><strong>📌 Syarat:</strong> Mahasiswa aktif, IPK minimal 3.00, surat rekomendasi, dan dokumen pendukung lainnya.</p>
+            <p>
+                <strong>📌 Syarat:</strong> Mahasiswa aktif, IPK minimal 3.00, surat rekomendasi, dan dokumen pendukung lainnya.
+            </p>
             <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025" target="_blank">Kunjungi Situs Resmi</a>
         </div>
     </div>
-<!-- Cookie Settings Section -->
-<section id="cookie-settings" class="cookie-settings" style="display: none;">
-  <h2>Pengaturan Cookie</h2>
-  <input type="text" id="cookie-name" placeholder="Nama Anda">
-  <button onclick="saveCookie()">Simpan</button>
-  <button onclick="showCookie()">Lihat Cookie</button>
-  <button onclick="deleteCookie()">Hapus Cookie</button>
-  <p id="cookie-info"></p>
-</section>
 
-<!-- Cookie Bar -->
-<div id="cookie-bar" class="cookie-bar">
-  <p>Website ini menggunakan cookie untuk meningkatkan pengalaman Anda.</p>
-  <div class="cookie-buttons">
-    <button onclick="acceptAllCookies()">Terima Semua</button>
-    <button onclick="showCookieSettings()">Kelola</button>
-  </div>
-</div>
+    <!-- Cookie Settings Section -->
+    <section id="cookie-settings" class="cookie-settings" style="display: none;">
+        <h2>Pengaturan Cookie</h2>
+        <input type="text" id="cookie-name" placeholder="Nama Anda" />
+        <button onclick="saveCookie()">Simpan</button>
+        <button onclick="showCookie()">Lihat Cookie</button>
+        <button onclick="deleteCookie()">Hapus Cookie</button>
+        <p id="cookie-info"></p>
+    </section>
 
-<!-- Weather Section -->
-<section id="weather-section" style="padding: 20px; text-align: center; border-top: 1px solid #ccc; margin-top: 40px;">
-  <h2>Cek Cuaca Kota Anda</h2>
-  <input type="text" id="city" placeholder="Masukkan nama kota" style="padding: 8px; width: 200px; margin: 10px 0;">
-  <button onclick="getWeather()" style="padding: 8px 12px; cursor: pointer;">Cek Cuaca</button>
-  <div id="weather-result" style="margin-top: 15px;"></div>
-</section>
+    <!-- Cookie Bar -->
+    <div id="cookie-bar" class="cookie-bar">
+        <p>Website ini menggunakan cookie untuk meningkatkan pengalaman Anda.</p>
+        <div class="cookie-buttons">
+            <button onclick="acceptAllCookies()">Terima Semua</button>
+            <button onclick="showCookieSettings()">Kelola</button>
+        </div>
+    </div>
 
-<script>
-  async function getWeather() {
-    const apiKey = "85d8591730msh11ffacc1e396ed4p1e6baajsn5f8f8cdbdfbc";
-    const city = document.getElementById("city").value;
-    const url = `https://open-weather13.p.rapidapi.com/city/${city}`;
-
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": apiKey,
-        "X-RapidAPI-Host": "open-weather13.p.rapidapi.com",
-      },
-    };
-
-    try {
-      const response = await fetch(url, options);
-      const result = await response.json();
-      const weather = result.weather[0].description;
-      const temperature = result.main.temp;
-      const cityName = result.name;
-
-      document.getElementById("weather-result").innerHTML = `
-        <p>Cuaca di <strong>${cityName}</strong>: ${weather}</p>
-        <p>Suhu: ${temperature}°C</p>
-      `;
-    } catch (error) {
-      console.error(error);
-      document.getElementById("weather-result").innerHTML = "<p>Gagal mengambil data cuaca. Pastikan nama kota benar dan coba lagi.</p>";
-    }
-  }
-</script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
