@@ -542,3 +542,52 @@ textarea, input {
   opacity: 1;
   visibility: visible;
 }
+
+/* ======== Cookie ======== */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  background-color: #0077aa;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+main {
+  padding: 20px;
+}
+
+.cookie-settings {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.cookie-form input {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.cookie-actions button {
+  margin: 5px;
+  padding: 8px 12px;
+}
+
+.cookie-info {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.cookie-notice {
+  background: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  display: none;
+}
