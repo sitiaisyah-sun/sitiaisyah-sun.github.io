@@ -123,25 +123,31 @@
             <p><strong>📌 Syarat:</strong> Mahasiswa aktif, IPK minimal 3.00, surat rekomendasi, dan dokumen pendukung lainnya.</p>
             <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025" target="_blank">Kunjungi Situs Resmi</a>
         </div>
-    </div>
-<!-- Cookie Settings Section -->
-<section id="cookie-settings" class="cookie-settings" style="display: none;">
-  <h2>Pengaturan Cookie</h2>
-  <input type="text" id="cookie-name" placeholder="Nama Anda">
-  <button onclick="saveCookie()">Simpan</button>
-  <button onclick="showCookie()">Lihat Cookie</button>
-  <button onclick="deleteCookie()">Hapus Cookie</button>
-  <p id="cookie-info"></p>
-</section>
-
-<!-- Cookie Bar -->
-<div id="cookie-bar" class="cookie-bar">
-  <p>Website ini menggunakan cookie untuk meningkatkan pengalaman Anda.</p>
-  <div class="cookie-buttons">
+    <!-- Cookie Banner -->
+<div id="cookie-banner" class="cookie-banner">
+  <p>Website ini menggunakan cookie untuk meningkatkan pengalaman Anda. <a href="#">Pelajari lebih lanjut</a>.</p>
+  <div>
     <button onclick="acceptAllCookies()">Terima Semua</button>
-    <button onclick="showCookieSettings()">Kelola</button>
+    <button onclick="openCookieSettings()">Kelola Cookie</button>
   </div>
 </div>
+
+<!-- Cookie Settings Modal -->
+<div id="cookie-settings-modal" class="cookie-modal">
+  <div class="cookie-modal-content">
+    <h3>Pengaturan Cookie</h3>
+    <form id="cookie-settings-form">
+      <label><input type="checkbox" name="essential" checked disabled> Cookie Esensial (wajib)</label>
+      <label><input type="checkbox" name="analytics"> Cookie Analitik</label>
+      <label><input type="checkbox" name="marketing"> Cookie Pemasaran</label>
+      <div class="cookie-modal-actions">
+        <button type="button" onclick="saveCookieSettings()">Simpan</button>
+        <button type="button" onclick="closeCookieSettings()">Batal</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 
 
 </body>
