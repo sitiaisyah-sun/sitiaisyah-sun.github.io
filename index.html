@@ -2,98 +2,19 @@
 <html lang="id">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Aisyah</title>
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body.dark-mode {
             background-color: #121212;
             color: #ffffff;
         }
-
-        header.dark-mode,
-        footer.dark-mode {
+        header.dark-mode, footer.dark-mode {
             background-color: #1e1e1e;
-        }
-
-        /* Popup beasiswa styling */
-        .popup-beasiswa {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            color: black;
-            padding: 20px;
-            z-index: 1001;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            max-width: 90%;
-            max-height: 90%;
-            overflow-y: auto;
-        }
-
-        .popup-content .close-btn {
-            cursor: pointer;
-            float: right;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        /* Modal buku */
-        .modal {
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: none;
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            padding: 20px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 600px;
-            position: relative;
-            color: black;
-        }
-
-        .modal-content .close {
-            color: #aaa;
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 30px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        /* Cookie bar */
-        #cookie-bar {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 10000;
-        }
-
-        .cookie-buttons button {
-            margin-left: 10px;
-            cursor: pointer;
         }
     </style>
 </head>
@@ -107,39 +28,33 @@
 
     <header>
         <h1>Perpustakaan Aisyah</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="tooltip active" data-tooltip="Kembali ke halaman utama">🏠 Beranda</a></li>
-                <li><a href="about.html" class="tooltip" data-tooltip="Pelajari lebih lanjut tentang saya">📖 Tentang
-                        Saya</a></li>
-                <li><a href="contact.html" class="tooltip" data-tooltip="Hubungi kami untuk pertanyaan">✉ Hubungi
-                        Saya</a></li>
-                <li><a href="tabel.php">✉ Tabel Perkalian</a></li>
-                <li><a href="login.html">🔑 Login</a></li>
-            </ul>
-        </nav>
+       <nav>
+  <ul>
+    <li><a href="index.html" class="tooltip active" data-tooltip="Kembali ke halaman utama">🏠 Beranda</a></li>
+    <li><a href="about.html" class="tooltip" data-tooltip="Pelajari lebih lanjut tentang saya">📖 Tentang Saya</a></li>
+    <li><a href="contact.html" class="tooltip" data-tooltip="Hubungi kami untuk pertanyaan">✉ Hubungi Saya</a></li>
+    <li><a href="tabel.php">✉ Tabel Perkalian</a></li>
+    <li><a href="login.html">🔑 Login</a></li>
+  </ul>
+</nav>
 
     </header>
 
     <main>
         <div class="welcome-box">
             <h2><i class="fas fa-smile"></i> Hai, Selamat Datang</h2>
-            <p>Perkenalkan, saya <b>Siti Aisyah</b>. Ini adalah perpustakaan pribadi saya yang berisi koleksi buku
-                favorit dan tugas akademik yang saya input ke dalam <i>homepage</i>.</p>
-            <p>Perpustakaan ini memiliki berbagai jenis buku, mulai dari fiksi, non-fiksi, hingga buku akademik untuk
-                membantu proses belajar. Saya juga mengoleksi artikel dan jurnal dengan berbagai topik menarik.</p>
-            <p>Saya berencana menambahkan fitur rekomendasi buku, ulasan, dan informasi acara literasi mendatang. Harapan
-                saya, perpustakaan ini bisa menjadi sumber inspirasi dan pengetahuan bagi para pengunjung.</p>
-            <p>Silakan jelajahi koleksi saya dan temukan buku yang menarik! Jika ada pertanyaan atau ingin berbagi
-                rekomendasi, hubungi saya melalui halaman kontak.</p>
+            <p>Perkenalkan, saya <b>Siti Aisyah</b>. Ini adalah perpustakaan pribadi saya yang berisi koleksi buku favorit dan tugas akademik yang saya input ke dalam <i>homepage</i>.</p>
+            <p>Perpustakaan ini memiliki berbagai jenis buku, mulai dari fiksi, non-fiksi, hingga buku akademik untuk membantu proses belajar. Saya juga mengoleksi artikel dan jurnal dengan berbagai topik menarik.</p>
+            <p>Saya berencana menambahkan fitur rekomendasi buku, ulasan, dan informasi acara literasi mendatang. Harapan saya, perpustakaan ini bisa menjadi sumber inspirasi dan pengetahuan bagi para pengunjung.</p>
+            <p>Silakan jelajahi koleksi saya dan temukan buku yang menarik! Jika ada pertanyaan atau ingin berbagi rekomendasi, hubungi saya melalui halaman kontak.</p>
             <p>Saya mengambil referensi untuk web saya dari perpustakaan UI. Silahkan cek juga perpustakaan UI ya</p>
             <a href="https://lib.ui.ac.id/" target="_blank">Perpustakaan UI</a>
         </div>
-
+        
         <h3>Cari Novel</h3>
         <p>Carilah buku yang ingin Anda cari.</p>
 
-        <input type="text" id="search" placeholder="Cari buku..." style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px;" />
+        <input type="text" id="search" placeholder="Cari buku..." style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px;">
 
         <div id="book-list"></div>
 
@@ -149,11 +64,9 @@
             <div class="berita-container">
                 <div class="berita-card">
                     <h3>Beasiswa Pelindo Prestasi 2025</h3>
-                    <p>Universitas Sumatera Utara bekerja sama dengan PT Pelindo membuka pendaftaran beasiswa untuk mahasiswa
-                        berprestasi. Program ini mencakup bantuan pendidikan dan pengembangan diri.</p>
+                    <p>Universitas Sumatera Utara bekerja sama dengan PT Pelindo membuka pendaftaran beasiswa untuk mahasiswa berprestasi. Program ini mencakup bantuan pendidikan dan pengembangan diri.</p>
                     <p><strong>Deadline:</strong> Cek segera karena kuota terbatas!</p>
-                    <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025"
-                        target="_blank">Baca Selengkapnya</a>
+                    <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025" target="_blank">Baca Selengkapnya</a>
                     <button onclick="tampilkanPopupBeasiswa()">Lihat Info Beasiswa</button>
                 </div>
             </div>
@@ -161,8 +74,7 @@
 
         <div id="comment-section">
             <h2>Kolom Komentar</h2>
-            <textarea id="comment-input" placeholder="Tulis komentar..." rows="4"
-                style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+            <textarea id="comment-input" placeholder="Tulis komentar..." rows="4" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
             <button onclick="addComment()">Kirim</button>
             <div id="comment-list" style="margin-top: 20px;"></div>
         </div>
@@ -171,7 +83,7 @@
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
                 <h2 id="modal-title"></h2>
-                <img id="modal-image" src="" alt="" style="max-width: 100%; margin-bottom: 15px;" />
+                <img id="modal-image" src="" alt="">
                 <p id="modal-author"></p>
                 <p id="modal-description"></p>
             </div>
@@ -183,7 +95,6 @@
     </footer>
 
     <script>
-        // Dark Mode toggle
         function myFunction() {
             var element = document.body;
             element.classList.toggle("dark-mode");
@@ -193,178 +104,12 @@
             footer.classList.toggle("dark-mode");
         }
 
-        // Popup beasiswa
         function tampilkanPopupBeasiswa() {
             document.getElementById('popup-beasiswa').style.display = 'block';
         }
 
         function tutupPopupBeasiswa() {
             document.getElementById('popup-beasiswa').style.display = 'none';
-        }
-
-        // Buku contoh
-        const books = [
-            {
-                title: "Laskar Pelangi",
-                author: "Andrea Hirata",
-                description: "Novel inspiratif tentang perjuangan pendidikan anak-anak di Belitung.",
-                image: "https://upload.wikimedia.org/wikipedia/id/3/31/Laskar_Pelangi.jpg"
-            },
-            {
-                title: "Negeri 5 Menara",
-                author: "A. Fuadi",
-                description: "Kisah persahabatan dan perjuangan santri di pondok pesantren.",
-                image: "https://upload.wikimedia.org/wikipedia/id/6/6a/Negeri_5_Menara.jpg"
-            },
-            {
-                title: "Seni Memaafkan",
-                author: "Brian Adam",
-                description: "Buku pengembangan diri tentang pentingnya memaafkan.",
-                image: "https://via.placeholder.com/150"
-            }
-        ];
-
-        // Render buku ke halaman
-        function renderBooks(bookArray) {
-            const bookList = document.getElementById('book-list');
-            bookList.innerHTML = '';
-
-            if (bookArray.length === 0) {
-                bookList.innerHTML = '<p>Tidak ada buku yang cocok dengan pencarian.</p>';
-                return;
-            }
-
-            bookArray.forEach(book => {
-                const bookDiv = document.createElement('div');
-                bookDiv.classList.add('book-item');
-                bookDiv.style.border = "1px solid #ccc";
-                bookDiv.style.padding = "10px";
-                bookDiv.style.marginBottom = "10px";
-                bookDiv.style.cursor = "pointer";
-
-                bookDiv.innerHTML = `
-                    <h4>${book.title}</h4>
-                    <p>Penulis: ${book.author}</p>
-                `;
-
-                // Buka modal saat diklik
-                bookDiv.addEventListener('click', () => {
-                    openModal(book);
-                });
-
-                bookList.appendChild(bookDiv);
-            });
-        }
-
-        // Filter buku berdasarkan input pencarian
-        document.getElementById('search').addEventListener('input', function () {
-            const query = this.value.toLowerCase();
-            const filteredBooks = books.filter(book =>
-                book.title.toLowerCase().includes(query) || book.author.toLowerCase().includes(query)
-            );
-            renderBooks(filteredBooks);
-        });
-
-        // Modal buku
-        function openModal(book) {
-            document.getElementById('modal-title').textContent = book.title;
-            document.getElementById('modal-author').textContent = 'Penulis: ' + book.author;
-            document.getElementById('modal-description').textContent = book.description;
-            document.getElementById('modal-image').src = book.image;
-            document.getElementById('book-modal').style.display = 'block';
-        }
-
-        function closeModal() {
-            document.getElementById('book-modal').style.display = 'none';
-        }
-
-        // Komentar
-        function addComment() {
-            const commentInput = document.getElementById('comment-input');
-            const commentList = document.getElementById('comment-list');
-            const commentText = commentInput.value.trim();
-
-            if (commentText === '') {
-                alert('Komentar tidak boleh kosong!');
-                return;
-            }
-
-            const commentDiv = document.createElement('div');
-            commentDiv.style.border = "1px solid #ccc";
-            commentDiv.style.padding = "8px";
-            commentDiv.style.marginBottom = "10px";
-            commentDiv.textContent = commentText;
-
-            commentList.appendChild(commentDiv);
-            commentInput.value = '';
-        }
-
-        // Cookie handling functions
-        function setCookie(name, value, days) {
-            const d = new Date();
-            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
-            const expires = "expires=" + d.toUTCString();
-            document.cookie = name + "=" + value + ";" + expires + ";path=/";
-        }
-
-        function getCookie(name) {
-            const cname = name + "=";
-            const decodedCookie = decodeURIComponent(document.cookie);
-            const ca = decodedCookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(cname) == 0) {
-                    return c.substring(cname.length, c.length);
-                }
-            }
-            return "";
-        }
-
-        function deleteCookie() {
-            setCookie('username', '', -1);
-            document.getElementById('cookie-info').textContent = "Cookie dihapus.";
-        }
-
-        function saveCookie() {
-            const name = document.getElementById('cookie-name').value.trim();
-            if (!name) {
-                alert("Masukkan nama terlebih dahulu!");
-                return;
-            }
-            setCookie('username', name, 7);
-            document.getElementById('cookie-info').textContent = "Cookie disimpan untuk 7 hari.";
-        }
-
-        function showCookie() {
-            const username = getCookie('username');
-            if (username) {
-                document.getElementById('cookie-info').textContent = "Cookie Anda: " + username;
-            } else {
-                document.getElementById('cookie-info').textContent = "Tidak ada cookie.";
-            }
-        }
-
-        function acceptAllCookies() {
-            // Simpel saja: simpan cookie default
-            setCookie('username', 'Pengunjung', 30);
-            document.getElementById('cookie-bar').style.display = 'none';
-        }
-
-        function showCookieSettings() {
-            document.getElementById('cookie-settings').style.display = 'block';
-        }
-
-        // Render awal buku
-        renderBooks(books);
-
-        // Tampilkan cookie bar jika cookie belum ada
-        window.onload = function () {
-            if (!getCookie('username')) {
-                document.getElementById('cookie-bar').style.display = 'flex';
-            }
         }
     </script>
 
@@ -373,34 +118,31 @@
         <div class="popup-content">
             <span class="close-btn" onclick="tutupPopupBeasiswa()">&times;</span>
             <h2>Beasiswa Pelindo Prestasi 2025</h2>
-            <p>Beasiswa ini merupakan program bantuan pendidikan dari PT Pelindo untuk mahasiswa Universitas Sumatera Utara
-                yang berprestasi.</p>
+            <p>Beasiswa ini merupakan program bantuan pendidikan dari PT Pelindo untuk mahasiswa Universitas Sumatera Utara yang berprestasi.</p>
             <p><strong>🗓️ Pendaftaran:</strong> Sampai 30 April 2025</p>
-            <p><strong>📌 Syarat:</strong> Mahasiswa aktif, IPK minimal 3.00, surat rekomendasi, dan dokumen pendukung
-                lainnya.</p>
-            <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025" target="_blank">Kunjungi
-                Situs Resmi</a>
+            <p><strong>📌 Syarat:</strong> Mahasiswa aktif, IPK minimal 3.00, surat rekomendasi, dan dokumen pendukung lainnya.</p>
+            <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025" target="_blank">Kunjungi Situs Resmi</a>
         </div>
     </div>
+<!-- Cookie Settings Section -->
+<section id="cookie-settings" class="cookie-settings" style="display: none;">
+  <h2>Pengaturan Cookie</h2>
+  <input type="text" id="cookie-name" placeholder="Nama Anda">
+  <button onclick="saveCookie()">Simpan</button>
+  <button onclick="showCookie()">Lihat Cookie</button>
+  <button onclick="deleteCookie()">Hapus Cookie</button>
+  <p id="cookie-info"></p>
+</section>
 
-    <!-- Cookie Settings Section -->
-    <section id="cookie-settings" class="cookie-settings" style="display: none; padding: 20px; background: #eee; margin: 10px;">
-        <h2>Pengaturan Cookie</h2>
-        <input type="text" id="cookie-name" placeholder="Nama Anda" />
-        <button onclick="saveCookie()">Simpan</button>
-        <button onclick="showCookie()">Lihat Cookie</button>
-        <button onclick="deleteCookie()">Hapus Cookie</button>
-        <p id="cookie-info"></p>
-    </section>
+<!-- Cookie Bar -->
+<div id="cookie-bar" class="cookie-bar">
+  <p>Website ini menggunakan cookie untuk meningkatkan pengalaman Anda.</p>
+  <div class="cookie-buttons">
+    <button onclick="acceptAllCookies()">Terima Semua</button>
+    <button onclick="showCookieSettings()">Kelola</button>
+  </div>
+</div>
 
-    <!-- Cookie Bar -->
-    <div id="cookie-bar" class="cookie-bar" style="display:none;">
-        <p>Website ini menggunakan cookie untuk meningkatkan pengalaman Anda.</p>
-        <div class="cookie-buttons">
-            <button onclick="acceptAllCookies()">Terima Semua</button>
-            <button onclick="showCookieSettings()">Kelola</button>
-        </div>
-    </div>
 
 </body>
 
