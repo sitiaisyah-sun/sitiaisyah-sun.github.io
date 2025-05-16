@@ -456,21 +456,15 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 9999;
+  z-index: 1000;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-  flex-wrap: wrap;
 }
 
 .cookie-consent p {
   margin: 0;
   font-size: 14px;
-  flex: 1 1 250px;
-}
-
-.cookie-buttons {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  flex: 1;
+  text-align: left;
 }
 
 .cookie-consent button {
@@ -478,6 +472,7 @@ input {
   color: #003300;
   border: none;
   padding: 8px 15px;
+  margin-left: 20px;
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
@@ -487,46 +482,3 @@ input {
 .cookie-consent button:hover {
   background-color: #77cc77;
 }
-
-/* ======== Cuaca ======== */
-
-/* Styling untuk cuaca */
-#weather-section {
-    padding: 15px;
-    background: #f0f0f0;
-    text-align: center;
-    margin-bottom: 20px;
-    border-radius: 6px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#weather-section input {
-    padding: 8px;
-    width: 220px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-#weather-section button {
-    padding: 8px 12px;
-    cursor: pointer;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-#weather-section button:hover {
-    background-color: #0056b3;
-}
-
-#weather-result {
-    margin-top: 15px;
-    font-weight: 600;
-}
-
-/* Tambahan styling lain yang mungkin sudah ada di style.css */
