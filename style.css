@@ -1,3 +1,4 @@
+
 /* ======== RESET UMUM ======== */
 * {
   margin: 0;
@@ -444,98 +445,40 @@ input {
 }
 
 /* ======== COOKIE CONSENT ======== */
-/* Cookie Banner */
-.cookie-banner {
+.cookie-consent {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #1f2937; /* warna latar dark */
-  color: #e5e7eb;
-  padding: 12px 20px;
+  background-color: #003300;
+  color: #ffffff;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 9999;
-  font-size: 14px;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.cookie-banner p {
+.cookie-consent p {
   margin: 0;
+  font-size: 14px;
+  flex: 1;
+  text-align: left;
 }
 
-.cookie-banner a {
-  color: #a3e635;
-  text-decoration: underline;
-}
-
-.cookie-banner button {
-  margin-left: 10px;
-  padding: 6px 12px;
-  background-color: #a3e635;
-  color: #1f2937;
+.cookie-consent button {
+  background-color: #aaffaa;
+  color: #003300;
   border: none;
-  border-radius: 4px;
+  padding: 8px 15px;
+  margin-left: 20px;
+  border-radius: 5px;
+  font-weight: bold;
   cursor: pointer;
-  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
-.cookie-banner button:hover {
-  background-color: #bef264;
-}
-
-/* Cookie Modal */
-.cookie-modal {
-  display: none;
-  position: fixed;
-  z-index: 10000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(15, 23, 42, 0.8);
-  backdrop-filter: blur(3px);
-}
-
-.cookie-modal-content {
-  background-color: #111827;
-  color: #e5e7eb;
-  margin: 10% auto;
-  padding: 20px;
-  width: 90%;
-  max-width: 400px;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  border: 1px solid #a3e635;
-}
-
-.cookie-modal-content h3 {
-  margin-top: 0;
-  color: #a3e635;
-}
-
-.cookie-modal-content label {
-  display: block;
-  margin: 10px 0;
-}
-
-.cookie-modal-actions {
-  text-align: right;
-  margin-top: 20px;
-}
-
-.cookie-modal-actions button {
-  background-color: #a3e635;
-  color: #1f2937;
-  border: none;
-  padding: 6px 10px;
-  margin-left: 10px;
-  border-radius: 4px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.cookie-modal-actions button:hover {
-  background-color: #d9f99d;
+.cookie-consent button:hover {
+  background-color: #77cc77;
 }
