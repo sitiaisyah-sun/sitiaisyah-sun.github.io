@@ -1,129 +1,532 @@
-<!DOCTYPE html>
-<html lang="id">
+/* ======== RESET UMUM ======== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan Aisyah</title>
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <style>
-        body.dark-mode {
-            background-color: #121212;
-            color: #ffffff;
-        }
-        header.dark-mode, footer.dark-mode {
-            background-color: #1e1e1e;
-        }
-    </style>
-</head>
+/* ======== BODY UMUM ======== */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+}
 
-<body class="home-page">
-    <script>
-        alert("Selamat datang di Perpustakaan Aisyah");
-    </script>
+/* ======== HEADER ======== */
+header {
+  background-color: #003300;
+  color: #aaffaa;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    <button id="dark-mode-toggle" onclick="myFunction()">Dark Mode</button>
+/* ======== NAVBAR ======== */
+nav {
+  margin-top: 10px;
+}
 
-    <header>
-        <h1>Perpustakaan Aisyah</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">🏠 Beranda</a></li>
-                <li><a href="about.html">📖 Tentang Saya</a></li>
-                <li><a href="contact.html">✉ Hubungi Saya</a></li>
-                <li><a href="tabel.php">✉ Tabel Perkalian</a></li>
-                <li><a href="login.html">🔑 Login</a></li> <!-- Link Login -->
-            </ul>
-        </nav>
-    </header>
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    <main>
-        <div class="welcome-box">
-            <h2><i class="fas fa-smile"></i> Hai, Selamat Datang</h2>
-            <p>Perkenalkan, saya <b>Siti Aisyah</b>. Ini adalah perpustakaan pribadi saya yang berisi koleksi buku favorit dan tugas akademik yang saya input ke dalam <i>homepage</i>.</p>
-            <p>Perpustakaan ini memiliki berbagai jenis buku, mulai dari fiksi, non-fiksi, hingga buku akademik untuk membantu proses belajar. Saya juga mengoleksi artikel dan jurnal dengan berbagai topik menarik.</p>
-            <p>Saya berencana menambahkan fitur rekomendasi buku, ulasan, dan informasi acara literasi mendatang. Harapan saya, perpustakaan ini bisa menjadi sumber inspirasi dan pengetahuan bagi para pengunjung.</p>
-            <p>Silakan jelajahi koleksi saya dan temukan buku yang menarik! Jika ada pertanyaan atau ingin berbagi rekomendasi, hubungi saya melalui halaman kontak.</p>
-            <p>Saya mengambil referensi untuk web saya dari perpustakaan UI. Silahkan cek juga perpustakaan UI ya</p>
-            <a href="https://lib.ui.ac.id/" target="_blank">Perpustakaan UI</a>
-        </div>
+nav ul li {
+  display: inline-block; /* inline-block lebih konsisten untuk margin */
+  margin: 0 15px;
+}
 
-        <h3>Cari Novel</h3>
-        <p>Carilah buku yang ingin Anda cari.</p>
+nav a {
+  color: #aaffaa;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
 
-        <input type="text" id="search" placeholder="Cari buku..." style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px;">
+nav a:hover,
+nav a:focus {
+  background-color: #005500;
+  border-radius: 5px;
+  outline: none;
+}
 
-        <div id="book-list"></div>
+/* ======== MAIN CONTENT ======== */
+main {
+  flex-grow: 1;
+  padding: 20px;
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  min-height: 60vh;
+  text-align: left; /* biasanya konten main lebih nyaman kiri */
+}
 
-        <!-- Info Beasiswa -->
-        <section id="berita">
-            <h2>Info Terbaru</h2>
-            <div class="berita-container">
-                <div class="berita-card">
-                    <h3>Beasiswa Pelindo Prestasi 2025</h3>
-                    <p>Universitas Sumatera Utara bekerja sama dengan PT Pelindo membuka pendaftaran beasiswa untuk mahasiswa berprestasi. Program ini mencakup bantuan pendidikan dan pengembangan diri.</p>
-                    <p><strong>Deadline:</strong> Cek segera karena kuota terbatas!</p>
-                    <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025" target="_blank">Baca Selengkapnya</a>
-                    <button onclick="tampilkanPopupBeasiswa()">Lihat Info Beasiswa</button>
-                </div>
-            </div>
-        </section>
+/* ======== FOOTER ======== */
+footer {
+  background-color: #003300;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  height: 60px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  line-height: 20px; /* supaya vertikal rata tengah */
+}
 
-        <div id="comment-section">
-            <h2>Kolom Komentar</h2>
-            <textarea id="comment-input" placeholder="Tulis komentar..." rows="4" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
-            <button onclick="addComment()">Kirim</button>
-            <div id="comment-list" style="margin-top: 20px;"></div>
-        </div>
+/* ======== BERANDA ======== */
+.home-page .welcome-box {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
-        <div id="book-modal" class="modal" style="display:none;">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h2 id="modal-title"></h2>
-                <img id="modal-image" src="" alt="">
-                <p id="modal-author"></p>
-                <p id="modal-description"></p>
-            </div>
-        </div>
-    </main>
+.home-page h2 {
+  color: #003300;
+}
 
-    <footer>
-        <p>&copy; 2025 Perpustakaan Aisyah. All rights reserved.</p>
-    </footer>
+.home-page p {
+  font-size: 16px;
+  line-height: 1.6;
+}
 
-    <script>
-        function myFunction() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
-            var header = document.querySelector("header");
-            var footer = document.querySelector("footer");
-            header.classList.toggle("dark-mode");
-            footer.classList.toggle("dark-mode");
-        }
+/* ======== HALAMAN KONTAK ======== */
+.contact-page .form-container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        function tampilkanPopupBeasiswa() {
-            document.getElementById('popup-beasiswa').style.display = 'block';
-        }
+.contact-page form {
+  display: flex;
+  flex-direction: column;
+}
 
-        function tutupPopupBeasiswa() {
-            document.getElementById('popup-beasiswa').style.display = 'none';
-        }
-    </script>
+.contact-page label {
+  font-weight: bold;
+  margin-top: 10px;
+}
 
-    <!-- Popup Info Beasiswa -->
-    <div id="popup-beasiswa" class="popup-beasiswa" style="display:none;">
-        <div class="popup-content">
-            <span class="close-btn" onclick="tutupPopupBeasiswa()">&times;</span>
-            <h2>Beasiswa Pelindo Prestasi 2025</h2>
-            <p>Beasiswa ini merupakan program bantuan pendidikan dari PT Pelindo untuk mahasiswa Universitas Sumatera Utara yang berprestasi.</p>
-            <p><strong>🗓️ Pendaftaran:</strong> Sampai 30 April 2025</p>
-            <p><strong>📌 Syarat:</strong> Mahasiswa aktif, IPK minimal 3.00, surat rekomendasi, dan dokumen pendukung lainnya.</p>
-            <a href="https://www.usu.ac.id/id/pendidikan/beasiswa/beasiswa-pelindo-prestasi-2025" target="_blank">Kunjungi Situs Resmi</a>
-        </div>
-    </div>
+.contact-page input,
+.contact-page textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
 
-</body>
+.contact-page button {
+  background-color: #003300;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
 
-</html>
+.contact-page button:hover,
+.contact-page button:focus {
+  background-color: #005500;
+  outline: none;
+}
+
+/* ======== HALAMAN ABOUT ======== */
+.about-page .content-box {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.about-page p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ======== TABEL INFORMASI ======== */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.info-table th,
+.info-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.info-table th {
+  background-color: #003300;
+  color: #ffffff;
+}
+
+.info-table td {
+  background-color: #f9f9f9;
+}
+
+/* ======== BOOK GALLERY ======== */
+.book-gallery {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.book {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.book img {
+  width: 150px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.book:hover {
+  transform: scale(1.05);
+}
+
+.book h3 {
+  font-size: 16px;
+  margin: 10px 0 5px;
+  color: #003300;
+}
+
+.book p {
+  font-size: 14px;
+  color: #666666;
+}
+
+.book button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.book button:hover,
+.book button:focus {
+  background-color: #0056b3;
+  outline: none;
+}
+
+/* ======== MODAL BUKU ======== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #ffffff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-content img {
+  width: 150px;
+  margin: 10px 0;
+}
+
+.modal-buttons .btn {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 5px;
+  background-color: #007bff;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-buttons .btn:hover,
+.modal-buttons .btn:focus {
+  background-color: #0056b3;
+  outline: none;
+}
+
+.close,
+.close-btn {
+  background-color: #dc3545;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.close:hover,
+.close-btn:hover,
+.close:focus,
+.close-btn:focus {
+  background-color: #b02a37;
+  outline: none;
+}
+
+/* ======== DARK MODE ======== */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+header.dark-mode,
+footer.dark-mode {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+textarea,
+input {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #555555;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+/* ======== COMMENT SECTION ======== */
+#comment-section {
+  margin-top: 30px;
+  text-align: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+#comment-input {
+  width: 80%;
+  height: 60px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  display: block;
+  margin: 10px auto;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
+
+#comment-list {
+  margin-top: 20px;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comment {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #dddddd;
+}
+
+/* ======== TOOLTIP ======== */
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #006400;
+  color: #ffffff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip:hover::after,
+.tooltip:focus::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ======== INFO BEASISWA ======== */
+#berita {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+}
+
+#berita h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.berita-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.berita-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  background-color: #ffffff;
+  text-align: left;
+}
+
+.berita-card h3 {
+  color: #1a237e;
+  margin-bottom: 10px;
+}
+
+.berita-card a {
+  color: #1565c0;
+  text-decoration: underline;
+}
+
+/* ======== POPUP BEASISWA ======== */
+.popup-beasiswa {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 768px) {
+  main {
+    width: 95%;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .contact-page .form-container,
+  .about-page .content-box,
+  .home-page .welcome-box {
+    width: 90%;
+  }
+}
+
+/* ======== COOKIE CONSENT ======== */
+.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #003300;
+  color: #ffffff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cookie-consent p {
+  margin: 0;
+  font-size: 14px;
+  flex: 1;
+  text-align: left;
+}
+
+.cookie-consent button {
+  background-color: #aaffaa;
+  color: #003300;
+  border: none;
+  padding: 8px 15px;
+  margin-left: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cookie-consent button:hover,
+.cookie-consent button:focus {
+  background-color: #77cc77;
+  outline: none;
+}
