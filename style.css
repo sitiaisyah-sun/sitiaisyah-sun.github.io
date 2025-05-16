@@ -514,32 +514,27 @@ textarea, input {
 }
 
 /* ======== TOOLTIP ======== */
-.menu {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 20px;
-}
-
-.menu li {
+.tooltip {
   position: relative;
 }
 
 .tooltip::after {
   content: attr(data-tooltip);
   position: absolute;
-  bottom: 125%; /* di atas link */
+  bottom: 125%; /* Tooltip muncul di atas */
   left: 50%;
   transform: translateX(-50%);
-  background-color: #9c7fd0; /* ungu pastel */
+  background-color: #9c7fd0;
   color: white;
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 6px;
   white-space: nowrap;
+  font-size: 13px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s;
-  z-index: 10;
+  transition: opacity 0.3s ease;
+  z-index: 100;
 }
 
 .tooltip:hover::after {
