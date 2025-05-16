@@ -13,10 +13,10 @@ function ubahJudul() {
 // 2. Cuaca dengan OpenWeatherMap
 // ========================
 async function getWeather() {
-    const apiKey = '81fe1892a98337062a0e70074a68921c'; // Ganti dengan API Key OpenWeatherMap
+    const apiKey = 'YOUR_API_KEY'; // Ganti dengan API Key OpenWeatherMap
     const city = document.getElementById('city').value;
     if (!city) {
-        alert("Medan");
+        alert("Masukkan nama kota terlebih dahulu");
         return;
     }
 
@@ -168,12 +168,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Tampilkan buku awal
     displayBooks();
-
-    // Inisialisasi tombol cuaca (jika elemen ada)
-    const weatherButton = document.getElementById("weather-btn");
-    if (weatherButton) {
-        weatherButton.addEventListener("click", getWeather);
-    }
 });
 
 /* Popup Beasiswa */
@@ -188,21 +182,59 @@ function tutupPopupBeasiswa() {
 // ========================
 // 8. Cookie
 // ========================
-<script>
-  function acceptCookies() {
-    document.getElementById("cookieConsent").style.display = "none";
-    localStorage.setItem("cookiesAccepted", "true");
+
+window.onload = function () {
+  if (!getCookie("acceptedCookies")) {
+    document.getElementById("cookie-bar").style.display = "flex";
   }
 
-  function manageCookies() {
-    alert("Fitur kelola cookie belum tersedia. Silakan sesuaikan dengan halaman pengaturan privasi atau preferensi cookie.");
-    // Kamu bisa arahkan ke halaman lain, contoh:
-    // window.location.href = "/kelola-cookie.html";
+  const user = getCookie("username");
+  if (user) {
+    document.getElementById("cookie-info").innerText = `Halo, ${decodeURIComponent(user)}!`;
   }
+};
 
-  window.onload = function () {
-    if (localStorage.getItem("cookiesAccepted") === "true") {
-      document.getElementById("cookieConsent").style.display = "none";
-    }
-  };
-</script>
+function acceptAllCookies() {
+  setCookie("acceptedCookies", "true", 30);
+  document.getElementById("cookie-bar").style.display = "none";
+  alert("Cookie telah diterima.");
+}
+
+function showCookieSettings() {
+  document.getElementById("cookie-settings").style.display = "block";
+}
+
+function saveCookie() {
+  const name = document.getElementById("cookie-name").value.trim();
+  if (name) {
+    setCookie("username", name, 7);
+    document.getElementById("cookie-info").innerText = `Halo, ${name}! Cookie Anda disimpan.`;
+    alert("Cookie disimpan.");
+  } else {
+    alert("Masukkan nama terlebih dahulu.");
+  }
+}
+
+function showCookie() {
+  const user = getCookie("username");
+  alert(user ? `Cookie Anda: ${decodeURIComponent(user)}` : "Cookie tidak ditemukan.");
+}
+
+function deleteCookie() {
+  setCookie("username", "", -1);
+  document.getElementById("cookie-info").innerText = "Cookie telah dihapus.";
+  alert("Cookie dihapus.");
+}
+
+function setCookie(name, value, days) {
+  const d = new Date();
+  d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+  const expires = "expires=" + d.toUTCString();
+  document.cookie = `${name}=${encodeURIComponent(value)}; ${expires}; path=/`;
+}
+
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(";").shift();
+}
