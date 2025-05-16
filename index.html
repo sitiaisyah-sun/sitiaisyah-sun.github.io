@@ -143,6 +143,45 @@
   </div>
 </div>
 
+<!-- Weather Section -->
+<section id="weather-section" style="padding: 20px; text-align: center; border-top: 1px solid #ccc; margin-top: 40px;">
+  <h2>Cek Cuaca Kota Anda</h2>
+  <input type="text" id="city" placeholder="Masukkan nama kota" style="padding: 8px; width: 200px; margin: 10px 0;">
+  <button onclick="getWeather()" style="padding: 8px 12px; cursor: pointer;">Cek Cuaca</button>
+  <div id="weather-result" style="margin-top: 15px;"></div>
+</section>
+
+<script>
+  async function getWeather() {
+    const apiKey = "85d8591730msh11ffacc1e396ed4p1e6baajsn5f8f8cdbdfbc";
+    const city = document.getElementById("city").value;
+    const url = `https://open-weather13.p.rapidapi.com/city/${city}`;
+
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": apiKey,
+        "X-RapidAPI-Host": "open-weather13.p.rapidapi.com",
+      },
+    };
+
+    try {
+      const response = await fetch(url, options);
+      const result = await response.json();
+      const weather = result.weather[0].description;
+      const temperature = result.main.temp;
+      const cityName = result.name;
+
+      document.getElementById("weather-result").innerHTML = `
+        <p>Cuaca di <strong>${cityName}</strong>: ${weather}</p>
+        <p>Suhu: ${temperature}°C</p>
+      `;
+    } catch (error) {
+      console.error(error);
+      document.getElementById("weather-result").innerHTML = "<p>Gagal mengambil data cuaca. Pastikan nama kota benar dan coba lagi.</p>";
+    }
+  }
+</script>
 
 </body>
 
