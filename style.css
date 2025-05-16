@@ -512,3 +512,37 @@ textarea, input {
     font-size: 20px;
     cursor: pointer;
 }
+
+/* ======== TOOLTIP ======== */
+.menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li {
+  position: relative;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%; /* di atas link */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #9c7fd0; /* ungu pastel */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  z-index: 10;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
