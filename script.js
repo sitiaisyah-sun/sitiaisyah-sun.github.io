@@ -183,64 +183,65 @@ function tutupPopupBeasiswa() {
 // 8. Cookie
 // ========================
 
-// Cek notifikasi cookie di awal
+// Munculkan bar jika belum menerima cookie
 window.onload = function () {
   if (!getCookie("acceptedCookies")) {
-    document.getElementById("cookie-notice").style.display = "block";
+    document.getElementById("cookie-bar").style.display = "flex";
   }
 
-  const savedName = getCookie("username");
-  if (savedName) {
-    document.getElementById("cookie-info").innerText = `Halo, ${decodeURIComponent(savedName)}!`;
+  const user = getCookie("username");
+  if (user) {
+    document.getElementById("cookie-info").innerText = `Halo, ${decodeURIComponent(user)}!`;
   }
 };
 
-// Fungsi menerima cookie notice
-function acceptCookieNotice() {
+// Tombol: Terima Semua Cookie
+function acceptAllCookies() {
   setCookie("acceptedCookies", "true", 30);
-  document.getElementById("cookie-notice").style.display = "none";
+  document.getElementById("cookie-bar").style.display = "none";
+  alert("Cookie telah diterima.");
 }
 
-// Fungsi menyimpan cookie
+// Tombol: Tampilkan pengaturan cookie
+function showCookieSettings() {
+  document.getElementById("cookie-settings").style.display = "block";
+}
+
+// Simpan cookie
 function saveCookie() {
   const name = document.getElementById("cookie-name").value.trim();
   if (name) {
     setCookie("username", name, 7);
-    alert("Cookie telah disimpan!");
     document.getElementById("cookie-info").innerText = `Halo, ${name}! Cookie Anda disimpan.`;
+    alert("Cookie disimpan.");
   } else {
-    alert("Silakan masukkan nama.");
+    alert("Masukkan nama terlebih dahulu.");
   }
 }
 
-// Fungsi menampilkan cookie
+// Tampilkan cookie
 function showCookie() {
   const user = getCookie("username");
-  if (user) {
-    alert(`Cookie Anda: ${decodeURIComponent(user)}`);
-  } else {
-    alert("Tidak ada cookie disimpan.");
-  }
+  alert(user ? `Cookie Anda: ${decodeURIComponent(user)}` : "Cookie tidak ditemukan.");
 }
 
-// Fungsi menghapus cookie
+// Hapus cookie
 function deleteCookie() {
-  document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-  alert("Cookie telah dihapus.");
-  document.getElementById("cookie-info").innerText = "Cookie dihapus.";
+  setCookie("username", "", -1);
+  document.getElementById("cookie-info").innerText = "Cookie telah dihapus.";
+  alert("Cookie dihapus.");
 }
 
-// Fungsi mengambil cookie
-function getCookie(name) {
-  const value = "; " + document.cookie;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(";").shift();
-}
-
-// Fungsi menyetel cookie
+// Utilitas: set dan get cookie
 function setCookie(name, value, days) {
   const d = new Date();
   d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
   const expires = "expires=" + d.toUTCString();
-  document.cookie = `${name}=${encodeURIComponent(value)};${expires};path=/`;
+  document.cookie = `${name}=${encodeURIComponent(value)}; ${expires}; path=/`;
+}
+
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(";").shift();
 }
