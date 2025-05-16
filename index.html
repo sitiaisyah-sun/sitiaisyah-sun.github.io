@@ -52,13 +52,28 @@
         </div>
 
          <main>
-    <!-- FORM COOKIE -->
-    <div class="cookie-box">
-      <h3>Masukkan Nama Anda</h3>
-      <input type="text" id="namaPengguna" placeholder="Contoh: Aisyah" />
-      <button onclick="simpanNama()">Simpan Nama</button>
-      <p id="cookie-greeting"></p>
+    <!-- Notifikasi Cookie -->
+    <div id="cookie-notice" class="cookie-notice">
+      <p>Website ini menggunakan cookie untuk meningkatkan pengalaman Anda. <button onclick="acceptCookieNotice()">Saya Mengerti</button></p>
     </div>
+
+    <!-- Box Pengaturan Cookie -->
+    <section class="cookie-settings">
+      <h2>Pengaturan Cookie</h2>
+
+      <div class="cookie-form">
+        <input type="text" id="cookie-name" placeholder="Nama Anda">
+        <button onclick="saveCookie()">Simpan Cookie</button>
+      </div>
+
+      <div id="cookie-info" class="cookie-info"></div>
+
+      <div class="cookie-actions">
+        <button onclick="showCookie()">Lihat Cookie</button>
+        <button onclick="deleteCookie()">Hapus Cookie</button>
+      </div>
+    </section>
+  </main>
 
         <h3>Cari Novel</h3>
         <p>Carilah buku yang ingin Anda cari.</p>
