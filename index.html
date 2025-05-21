@@ -124,6 +124,21 @@
         </div>
     </div>
 
+    <!-- Cookie Consent Banner -->
+  <div id="cookieBanner" style="display:none">
+    <p>Kami memakai cookie untuk analitik, iklan, dan preferensi pengguna.  
+       Baca <a href="/kebijakan-privasi.html">kebijakan privasi</a>.</p>
+    <div>
+      <label><input type="checkbox" id="analytics" checked> Analitik</label>
+      <label><input type="checkbox" id="ads"       checked> Iklan</label>
+      <label><input type="checkbox" id="prefs"     checked> Preferensi</label>
+    </div>
+    <button id="saveBtn">Simpan Pilihan</button>
+    <button id="acceptAllBtn">Terima Semua</button>
+  </div>
+
+  <!-- Tarik semua logika dari berkas eksternal -->
+  <script src="js/cookie-consent.js" defer></script>
 </body>
 
 </html>
