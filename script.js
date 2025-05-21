@@ -183,61 +183,46 @@ function tutupPopupBeasiswa() {
 // ========================
 // 8. Cookie
 // ========================
-/* cookie-consent.js */
-
-/* ───────────── Helper cookie ───────────── */
 function setCookie(name, value, days) {
-  const d = new Date();
-  d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000); // 7 hari
-  document.cookie = `${name}=${value};expires=${d.toUTCString()};path=/`;
+  const expires = new Date(Date.now() + days * 864e5).toUTCString();
+  document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/';
 }
 
 function getCookie(name) {
-  const value = "; " + document.cookie;
-  const parts = value.split("; " + name + "=");
-  if (parts.length === 2) return parts.pop().split(";").shift();
-  return "";
+  return document.cookie.split('; ').reduce((r, v) => {
+    const parts = v.split('=');
+    return parts[0] === name ? decodeURIComponent(parts[1]) : r
+  }, '');
 }
 
-/* ──────── Core logic ──────── */
-function applyConsent(consent) {
-  if (consent.analytics)  console.log("📊 Analitik aktif");
-  if (consent.ads)        console.log("📢 Iklan aktif");
-  if (consent.prefs)      console.log("⚙️ Preferensi pengguna aktif");
+function showBanner(show) {
+  document.getElementById("cookieBanner").style.display = show ? "block" : "none";
+  document.getElementById("cookieSettingsIcon").style.display = show ? "none" : "block";
 }
 
-function saveSelected() {
-  const consent = {
-    analytics: document.getElementById("analytics").checked,
-    ads:       document.getElementById("ads").checked,
-    prefs:     document.getElementById("prefs").checked
-  };
-  setCookie("cookieConsent", JSON.stringify(consent), 7); // ← 7 hari
-  document.getElementById("cookieBanner").style.display = "none";
-  applyConsent(consent);
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const banner = document.getElementById("cookieBanner");
+  const icon = document.getElementById("cookieSettingsIcon");
+  const consent = getCookie("cookieConsent");
 
-function acceptAll() {
-  const consent = { analytics: true, ads: true, prefs: true };
-  setCookie("cookieConsent", JSON.stringify(consent), 7);
-  document.getElementById("cookieBanner").style.display = "none";
-  applyConsent(consent);
-}
-
-/* ──────── Init saat halaman siap ──────── */
-window.addEventListener("DOMContentLoaded", () => {
-  const banner   = document.getElementById("cookieBanner");
-  const saveBtn  = document.getElementById("saveBtn");
-  const allBtn   = document.getElementById("acceptAllBtn");
-
-  saveBtn.addEventListener("click", saveSelected);
-  allBtn .addEventListener("click", acceptAll);
-
-  const stored = getCookie("cookieConsent");
-  if (!stored) {
-    banner.style.display = "block";           // Belum setuju → tampilkan
+  if (!consent) {
+    showBanner(true);
   } else {
-    applyConsent(JSON.parse(stored));         // Sudah setuju → langsung aktif
+    showBanner(false);
+    console.log("Cookie disetujui:", consent);
   }
-});
 
+  document.getElementById("acceptAll").addEventListener("click", () => {
+    setCookie("cookieConsent", JSON.stringify({ analytics: true, ads: true, prefs: true }), 7);
+    showBanner(false);
+  });
+
+  document.getElementById("rejectAll").addEventListener("click", () => {
+    setCookie("cookieConsent", JSON.stringify({ analytics: false, ads: false, prefs: false }), 7);
+    showBanner(false);
+  });
+
+  icon.addEventListener("click", () => {
+    showBanner(true);
+  });
+});
