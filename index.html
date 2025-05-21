@@ -124,21 +124,23 @@
         </div>
     </div>
 
-    <!-- Cookie Consent Banner -->
-  <div id="cookieBanner" style="display:none">
-    <p>Kami memakai cookie untuk analitik, iklan, dan preferensi pengguna.  
-       Baca <a href="/kebijakan-privasi.html">kebijakan privasi</a>.</p>
-    <div>
-      <label><input type="checkbox" id="analytics" checked> Analitik</label>
-      <label><input type="checkbox" id="ads"       checked> Iklan</label>
-      <label><input type="checkbox" id="prefs"     checked> Preferensi</label>
-    </div>
-    <button id="saveBtn">Simpan Pilihan</button>
-    <button id="acceptAllBtn">Terima Semua</button>
-  </div>
+   <!-- Cookie Banner -->
+<div id="cookieBanner" class="cookie-banner">
+  <p><strong>Situs web ini menggunakan cookie 🍪</strong><br/>
+  Kami menggunakan cookie untuk analitik, iklan, dan preferensi pengguna. 
+  <a href="kebijakan-privasi.html" target="_blank">Pelajari lebih lanjut</a>.</p>
 
-  <!-- Tarik semua logika dari berkas eksternal -->
-  <script src="js/cookie-consent.js" defer></script>
+  <div class="cookie-actions">
+    <button id="acceptAll">Menerima</button>
+    <button id="rejectAll">Menolak</button>
+  </div>
+</div>
+
+<!-- Mini Settings Icon -->
+<div id="cookieSettingsIcon" class="cookie-settings-icon" style="display:none;" title="Kelola Cookie">⚙️</div>
+
+<script src="js/cookie-consent.js" defer></script>
+
 </body>
 
 </html>
